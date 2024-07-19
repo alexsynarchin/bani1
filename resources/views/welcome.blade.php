@@ -6,7 +6,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
-    <link href="{{mix('assets/css/app.css')}}?ver=22" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css2?family=Forum&display=swap" rel="stylesheet">
+    <link href="{{mix('assets/css/app.css')}}?ver=26" rel="stylesheet" type="text/css">
     <title>бронирование</title>
 </head>
 <body class="">
