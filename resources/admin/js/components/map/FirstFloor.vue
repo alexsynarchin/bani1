@@ -5,7 +5,7 @@
         </h4>
         <div style="font-weight: bold; color:red;">{{timeTitle}}</div>
         <section class="reserve-map reserve-map--second">
-            <img :src="$root.api_url + '/assets/images/first-floor.png'">
+            <img :src="'/assets/images/first-floor.png'">
             <div v-for="(cabinet, index) in cabinets"
                  @click.prevent="handleSelectCabinet(cabinet, index)"
                  class="reserve-map__cabinet"

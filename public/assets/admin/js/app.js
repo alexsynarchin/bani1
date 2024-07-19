@@ -6174,16 +6174,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
@@ -92957,9 +92947,7 @@ var render = function () {
       "section",
       { staticClass: "reserve-map reserve-map--second" },
       [
-        _c("img", {
-          attrs: { src: _vm.$root.api_url + "/assets/images/first-floor.png" },
-        }),
+        _c("img", { attrs: { src: "/assets/images/first-floor.png" } }),
         _vm._v(" "),
         _vm._l(_vm.cabinets, function (cabinet, index) {
           return _c(
@@ -93280,25 +93268,6 @@ var render = function () {
           "selected-places-arr": _vm.selectedPlacesArrFirst,
           "start-date": _vm.startDate,
           "end-date": _vm.endDate,
-          "time-title":
-            _vm.reserveData.selectedDayString +
-            " с " +
-            _vm.reserveData.startTime +
-            " до " +
-            _vm.reserveData.endTime,
-        },
-        on: { "select-item": _vm.selectReservationItem },
-      }),
-      _vm._v(" "),
-      _c("second-floor", {
-        attrs: {
-          date: _vm.date,
-          duration: _vm.duration,
-          "can-select": _vm.canSelect,
-          "start-date": _vm.startDate,
-          "end-date": _vm.endDate,
-          "selected-places-arr": _vm.selectedPlacesArrSecond,
-          "selected-cabins-arr": _vm.selectedCabinsArr,
           "time-title":
             _vm.reserveData.selectedDayString +
             " с " +

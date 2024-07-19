@@ -14,17 +14,7 @@
         @select-item="selectReservationItem"
         :time-title="reserveData.selectedDayString +  ' с ' + reserveData.startTime + ' до '  + reserveData.endTime"
     ></first-floor>
-    <second-floor
-        :date="date"
-        :duration="duration"
-        :can-select="canSelect"
-        :start-date="startDate"
-        :end-date="endDate"
-        @select-item="selectReservationItem"
-        :selected-places-arr="selectedPlacesArrSecond"
-        :selected-cabins-arr="selectedCabinsArr"
-        :time-title="reserveData.selectedDayString +  ' с ' + reserveData.startTime + ' до '  + reserveData.endTime"
-    ></second-floor>
+
 </section>
 </template>
 <script>
