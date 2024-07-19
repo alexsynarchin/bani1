@@ -1,0 +1,11 @@
+.booking-link {
+    padding: 0;
+    border: none;
+    font: inherit;
+    color: #006672;
+    text-decoration: underline;
+    background-color: transparent;
+    /* отображаем курсор в виде руки при наведении; некоторые
+    считают, что необходимо оставлять стрелочный вид для кнопок */
+    cursor: pointer;
+}

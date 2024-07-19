@@ -1,0 +1,20 @@
+.page-header {
+    background-color: #fff;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #D6DEE3;
+    &__logo{
+        margin-bottom: 0;
+    }
+    &__right{
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+    }
+    &__city {
+        margin-right: 20px;
+        .el-form-item {
+            margin-bottom: 0;
+        }
+    }
+}

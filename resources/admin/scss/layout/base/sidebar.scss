@@ -1,0 +1,10 @@
+.sidebar {
+
+    width: 280px;
+    background-color: #475779;
+    min-height: 100%;
+    @include media-breakpoint-down(sm) {
+        display: none;
+    }
+
+}

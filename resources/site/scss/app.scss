@@ -1,0 +1,27 @@
+@import "~bootstrap/scss/bootstrap";
+@import "components/fonts";
+@import "components/booking";
+@import "components/scaffolding";
+@import "components/booking-step";
+@import "components/booking-link";
+@import "components/reserve-map";
+@import "components/reserve-inf";
+@import "components/map-modal";
+@import "components/reservation-order";
+@import "components/calendar-modal";
+@import "components/result-modal";
+@import "components/places-dashboard";
+@import "components/places-dashboard-list";
+@import "components/places-reserv-list";
+@import "components/reserve-inf";
+
+body {
+    min-width: 380px;
+    background-color: #f1f1f1;
+    background-image: url("../images/reserve-bg.png");
+    background-repeat: repeat;
+}
+.app {
+    font-family: 'Noto Sans', sans-serif;
+}
+

@@ -1,0 +1,48 @@
+.modal-body{
+    padding: 10px 20px 30px 20px;
+}
+.modal-heading{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    &__title{
+        text-transform: uppercase;
+        margin-bottom: 0;
+    }
+    &__close{
+        position: relative;
+        width: 40px;
+        height: 40px;
+        border: none;
+        background: none;
+        &:focus,&:active{
+            outline: none;
+        }
+        &::before{
+            content: '';
+            position: absolute;
+            top: 20px;
+            left: 0;
+            width: 30px;
+            height: 2px;
+            background: #BEBEBE;
+            transform: rotate(45deg);
+        }
+        &::after{
+            content: '';
+            position: absolute;
+            top: 20px;
+            left: 0;
+            width: 30px;
+            height: 2px;
+            background: #BEBEBE;
+            transform: rotate(-45deg);
+        }
+    }
+}
+.modal-content{
+
+
+
+}

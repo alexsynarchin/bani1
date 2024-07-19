@@ -1,0 +1,9 @@
+.items-list {
+  &__btn-order {
+    padding: 0.15rem;
+    color: #1bc13b;
+    &:hover {
+      color: #d92344;
+    }
+  }
+}

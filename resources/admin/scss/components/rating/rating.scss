@@ -1,0 +1,11 @@
+.rating {
+    &__title {
+        font-size: 1.2rem;
+        display: flex;
+        align-items: center;
+    }
+    &__value {
+        font-size: 1.4rem;
+        margin-left: 2rem;
+    }
+}

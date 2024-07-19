@@ -1,0 +1,49 @@
+.construction-report {
+  list-style-type: none;
+  margin-left: 0;
+  padding-left: 0;
+  margin-top: 2.5rem;
+  margin-bottom: 2rem;
+  &__item {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+    position: relative;
+    &-actions {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      left: 0;
+      top: 0;
+      cursor: default;
+
+      color: #fff;
+      opacity: 0;
+      font-size: 20px;
+      background-color: rgba(0,0,0,.5);
+      transition: opacity .3s;
+      text-align: right;
+      padding-top: 15px;
+      padding-right: 15px;
+
+
+      &:hover {
+        opacity: 1;
+      }
+
+    }
+    &-delete {
+
+      cursor: pointer;
+      font-size: 2rem;
+    }
+  }
+  &__heading {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+  &__title {
+    margin-bottom: 0;
+  }
+}

@@ -1,0 +1,48 @@
+@import "~bootstrap/scss/bootstrap";
+@import "variables";
+//elements
+@import "elements/index";
+//components
+@import "components/preloader";
+@import "components/page-title";
+@import "components/scaffolding";
+@import "components/auth";
+@import "components/logo";
+@import "components/descr-list";
+@import "components/fonts";
+//Upload Gallery
+@import "components/upload-gallery/upload-gallery";
+// Building Options
+@import "components/building-option/building-option-item";
+@import "components/building-option/building-option-value-item";
+//Building
+@import "components/building/b-gallery";
+@import "components/building/construction-report";
+//District
+@import "components/district/district-list";
+@import '~element-ui/lib/theme-chalk/index.css';
+@import "components/district/district-item";
+//Setting
+@import "components/setting/setting-list";
+@import "components/setting/setting-item";
+//Rating
+@import "components/rating/rating";
+//Panoramas
+@import "components/panoramas/panorama-gallery";
+//header
+@import "components/header/page-header-profile";
+//layout
+@import "layout/base/page-header";
+@import "layout/base/sidebar.scss";
+@import "layout/base/sidevar-nav";
+@import "layout/base/dashboard-content";
+
+@import "components/items-list";
+@import "components/places-dashboard";
+@import "components/places-dashboard-list";
+@import "components/places-reserv-list";
+@import "components/reservation-inf";
+
+@import "components/booking";
+@import "components/booking-link";
+@import "components/booking-step";

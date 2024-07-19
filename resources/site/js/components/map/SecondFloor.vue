@@ -1,0 +1,249 @@
+<template>
+    <div class="map-floor map-floor--second">
+        <h4 class="map-floor__title">
+            2 ЭТАЖ
+        </h4>
+        <div style="font-weight: bold; color:red;">{{timeTitle}}</div>
+        <section class="reserve-map reserve-map--second">
+            <img :src="$root.api_url + '/assets/images/second-floor.jpg'">
+            <div v-for="(cabinet, index) in cabinets"
+                 @click.prevent="handleSelectCabinet(cabinet, index)"
+                 class="reserve-map__cabinet"
+                 :class="{
+                     'reserve-map__cabinet--selected': cabinet.select,
+                 }"
+                 :style="{
+                width : cabinet.width,
+
+                height : cabinet.height,
+                left:cabinet.posX + 'px',
+                top:cabinet.posY + 'px'
+            }">
+                <!--
+                <span :class="'reserve-map__cabinet-name ' + 'reserve-map__cabinet-name--' + cabinet.number">
+                    Кабинка {{cabinet.number}}
+                </span>-->
+                <img v-if="cabinet.reserved" :src="'https://admin.baniufa.ru/assets/images/places/cabin-' + cabinet.number  + '-res.svg' "
+                     :width="cabinet.width"
+                     :height="cabinet.height">
+                <img v-else  :src="'https://admin.baniufa.ru/assets/images/places/cabin-' + cabinet.number  + '.svg' "
+                     :width="cabinet.width"
+                     :height="cabinet.height">
+
+               <!--  <svg
+                    v-if="cabinet.reserved"
+                    :width="cabinet.width"
+                    :height="cabinet.height"
+                    :style="{
+                        width:cabinet.width,
+                        height:cabinet.height,
+                        }"
+                    :viewBox="'0 0 ' +  cabinet.width + ' ' + cabinet.height">
+                    <use :xlink:href="'/assets/site/images/sprites.svg?ver=11#sprite-cabin-' + cabinet.number+ '-res'"></use>
+                </svg>
+                <svg
+                    v-else
+                    :width="cabinet.width"
+                    :height="cabinet.height"
+                    :style="{
+                        width:cabinet.width,
+                        height:cabinet.height,
+                        }"
+                    :viewBox="'0 0 ' +  cabinet.width + ' ' + cabinet.height">
+                    <use :xlink:href="'/assets/site/images/sprites.svg?ver=8#sprite-cabin-' + cabinet.number"></use>
+                </svg> -->
+            </div>
+            <div v-for="(place, index) in places"
+                 v-if="place.number !== 52"
+                 @click.prevent="handleSelectPlace(place, index)"
+                 class="reserve-map__place-2"
+                 :style="{left:place.posX + 'px',top:place.posY + 'px'}"
+                 :class="{
+                     'reserve-map__place-2--selected': place.select,
+                }"
+            >
+                <span class="reserve-map__place-2-number" :class="{
+                    'reserve-map__place-2-number--left' : place.type === 'left',
+                    'reserve-map__place-2-number--right' : place.type === 'right',
+                    'reserve-map__place-2-number--top' : place.type === 'top',
+                    'reserve-map__place-2-number--down' : place.type === 'down',
+                }">{{place.number}}</span>
+                <img v-if="place.reserved"  :src="'https://admin.baniufa.ru/assets/images/places/place-' + place.type  + '-res.svg' ">
+                <img v-else  :src="'https://admin.baniufa.ru/assets/images/places/place-' + place.type  + '.svg' ">
+
+                <!--
+                <svg viewBox="0 0 35 35" v-if="place.reserved">
+                    <use :xlink:href="'/assets/site/images/sprites.svg?ver=8#sprite-place-' + place.type + '-res'"></use>
+                </svg>
+                <svg viewBox="0 0 35 35" v-else>
+                    <use :xlink:href="'/assets/site/images/sprites.svg?ver=8#sprite-place-' + place.type + '-2'"></use>
+                </svg>-->
+            </div>
+        </section>
+    </div>
+</template>
+<script>
+export default {
+    props: {
+        timeTitle: {
+            type:String,
+            default: "",
+        },
+        selectedPlacesArr:{
+            type:Array,
+            default: function (){
+                return [];
+            }
+        },
+        selectedCabinsArr: {
+            type:Array,
+            default: function (){
+                return [];
+            }
+        },
+
+        duration: {
+            type:Number,
+            default: 0,
+        },
+        date: {
+            type:String,
+            required:true
+        },
+        startDate:{
+            type:String,
+            required:true
+        },
+        endDate: {
+            type:String,
+            required: true
+        },
+
+        canSelect: {
+            type: Boolean,
+            default: false
+        },
+    },
+    data() {
+        return {
+            places: [],
+            cabinets: [],
+        }
+    },
+    methods: {
+        getCabinets() {
+            axios.get( this.$root.api_url + '/api/cabinets/list/' + 2, {params:{startDate:this.startDate, endDate:this.endDate, date:this.date}})
+                .then((response) => {
+                    this.cabinets = response.data;
+                    this.cabinets.forEach( (item, index)=> {
+                        let selectIndex = this.selectedCabinsArr.findIndex(function(selected) {
+                            return selected === index;
+                        } )
+                        if(selectIndex !==-1){
+                            this.cabinets[index].select = true;
+                        }
+                    })
+                })
+        },
+        getPlaces() {
+            axios.get(this.$root.api_url + '/api/places/list/' + 2, {params:{startDate:this.startDate, endDate:this.endDate, date:this.date}})
+                .then((response) => {
+                    this.places = response.data;
+                    this.places.forEach( (item, index)=> {
+                        let selectIndex = this.selectedPlacesArr.findIndex(function(selected) {
+                            return selected === index;
+                        } )
+                        if(selectIndex !==-1){
+                            this.places[index].select = true;
+                        }
+                    })
+                })
+        },
+        handleSelectPlace(place, index) {
+            if(this.canSelect && !place.reserved) {
+                this.places[index].select =  !this.places[index].select;
+                if(this.places[index].select) {
+                    this.selectedPlacesArr.push(index);
+                } else {
+                    let selectedArrIndex =  this.selectedPlacesArr.findIndex(function (item) {
+                        return item === index
+                    });
+                    this.selectedPlacesArr.splice(selectedArrIndex, 1);
+                }
+                let data = {
+                    id: place.id,
+                    type:'place',
+                    price: place.price,
+                    total_price:0
+                };
+                let total_price = 0;
+                let price = 0;
+                if(this.duration > 2) {
+                    let discount_time = this.duration - 2;
+                    let discount_price = data['price'] - 100;
+                    price = data['price'] * 2;
+                    price = price + (discount_price * discount_time)
+                } else {
+                    price = data['price'] * this.duration;
+                }
+                data.total_price = price;
+                this.$emit('select-item', data)
+            }
+            else if(place.reserved) {
+                this.$notify({
+                    title: 'Место занято',
+                    message: '',
+                    type: 'warning'
+                });
+            }
+            else {
+                this.$notify({
+                    title: 'Выберите дату и время',
+                    message: '',
+                    type: 'warning'
+                });
+            }
+        },
+         handleSelectCabinet(cabinet, index) {
+             if(this.canSelect && !cabinet.reserved) {
+                 this.cabinets[index].select =  !this.cabinets[index].select;
+                 if(this.cabinets[index].select) {
+                     this.selectedCabinsArr.push(index);
+                 } else {
+                     let selectedArrIndex =  this.selectedCabinsArr.findIndex(function (item) {
+                         return item === index
+                     });
+                     this.this.selectedCabinsArr.splice(selectedArrIndex, 1);
+                 }
+                 let data = {
+                     id: cabinet.id,
+                     type:'cabinet',
+                     price: cabinet.price,
+                     total_price:0
+                 };
+                 let total_price = data['price'] * this.duration;
+                 data.total_price = total_price;
+                 this.$emit('select-item', data)
+             }
+             else if(cabinet.reserved) {
+                 this.$notify({
+                     title: 'Кабинка занята',
+                     message: '',
+                     type: 'warning'
+                 });
+             }
+             else {
+                 this.$notify({
+                     title: 'Выберите дату и время',
+                     message: '',
+                     type: 'warning'
+                 });
+             }
+         }
+    },
+    mounted() {
+        this.getPlaces();
+        this.getCabinets()
+    }
+}
+</script>

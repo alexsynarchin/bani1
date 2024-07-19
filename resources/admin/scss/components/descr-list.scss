@@ -1,0 +1,15 @@
+.descr-list {
+    list-style-type: none;
+    margin-left: 0;
+    padding-left: 0;
+    &__item{
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 0.85rem;
+    }
+    &__label{
+        padding-right: 1.25rem;
+        text-transform: uppercase;
+        font-family: $headings-font-family;
+    }
+}

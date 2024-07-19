@@ -1,0 +1,17 @@
+.places-dashboard {
+    margin-bottom: 20px;
+    padding: 40px;
+    background-color: #007583;
+    border-radius: 10px;
+    color: #fff;
+    &__wrap {
+        display: flex;
+
+    }
+    &__title {
+        font-family: 'Metro', sans-serif;
+        font-size: 17px;
+        font-weight: normal;
+        margin-bottom: 35px;
+    }
+}

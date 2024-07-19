@@ -1,0 +1,23 @@
+.b-gallery {
+
+}
+.b-gallery-big {
+    margin-bottom: 0;
+}
+.b-gallery-list {
+    display: flex;
+    flex-wrap: wrap;
+    list-style-type: none;
+    margin-left: -8px;
+    margin-right: -8px;
+    padding-left: 0;
+    &__item {
+        margin: 10px 8px;
+        width: 80px;
+        border: 1px solid transparent;
+        cursor: pointer;
+        &--active {
+            border-color: #409eff;
+        }
+    }
+}
