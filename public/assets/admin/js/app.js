@@ -5730,7 +5730,7 @@ __webpack_require__.r(__webpack_exports__);
     getCabinets: function getCabinets() {
       var _this = this;
 
-      axios.get(this.$root.api_url + '/api/cabinets/list/' + 2, {
+      axios.get('/api/cabinets/list/' + 2, {
         params: {
           startDate: this.startDate,
           endDate: this.endDate,
