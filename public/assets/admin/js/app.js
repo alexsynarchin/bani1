@@ -5629,8 +5629,76 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   props: {
+    timeTitle: {
+      type: String,
+      "default": ""
+    },
+    selectedPlacesArr: {
+      type: Array,
+      "default": function _default() {
+        return [];
+      }
+    },
+    selectedCabinsArr: {
+      type: Array,
+      "default": function _default() {
+        return [];
+      }
+    },
     duration: {
       type: Number,
       "default": 0
@@ -5650,47 +5718,59 @@ __webpack_require__.r(__webpack_exports__);
     canSelect: {
       type: Boolean,
       "default": false
-    },
-    selectedPlacesArr: {
-      type: Array,
-      "default": function _default() {
-        return [];
-      }
-    },
-    timeTitle: {
-      type: String,
-      "default": ""
     }
   },
   data: function data() {
     return {
-      places: []
+      places: [],
+      cabinets: []
     };
   },
   methods: {
-    getPlaces: function getPlaces() {
+    getCabinets: function getCabinets() {
       var _this = this;
 
-      axios.get('/api/places/list/' + 1, {
+      axios.get(this.$root.api_url + '/api/cabinets/list/' + 2, {
         params: {
           startDate: this.startDate,
           endDate: this.endDate,
           date: this.date
         }
       }).then(function (response) {
-        _this.places = response.data;
+        _this.cabinets = response.data;
 
-        _this.places.forEach(function (item, index) {
-          var selectIndex = _this.selectedPlacesArr.findIndex(function (selected) {
+        _this.cabinets.forEach(function (item, index) {
+          var selectIndex = _this.selectedCabinsArr.findIndex(function (selected) {
             return selected === index;
           });
 
           if (selectIndex !== -1) {
-            _this.places[index].select = true;
+            _this.cabinets[index].select = true;
           }
         });
+      });
+    },
+    getPlaces: function getPlaces() {
+      var _this2 = this;
 
-        console.log(_this.places);
+      axios.get(this.$root.api_url + '/api/places/list/' + 1, {
+        params: {
+          startDate: this.startDate,
+          endDate: this.endDate,
+          date: this.date
+        }
+      }).then(function (response) {
+        _this2.places = response.data;
+
+        _this2.places.forEach(function (item, index) {
+          var selectIndex = _this2.selectedPlacesArr.findIndex(function (selected) {
+            return selected === index;
+          });
+
+          if (selectIndex !== -1) {
+            _this2.places[index].select = true;
+          }
+        });
       });
     },
     handleSelectPlace: function handleSelectPlace(place, index) {
@@ -5739,10 +5819,47 @@ __webpack_require__.r(__webpack_exports__);
           type: 'warning'
         });
       }
+    },
+    handleSelectCabinet: function handleSelectCabinet(cabinet, index) {
+      if (this.canSelect && !cabinet.reserved) {
+        this.cabinets[index].select = !this.cabinets[index].select;
+
+        if (this.cabinets[index].select) {
+          this.selectedCabinsArr.push(index);
+        } else {
+          var selectedArrIndex = this.selectedCabinsArr.findIndex(function (item) {
+            return item === index;
+          });
+          this["this"].selectedCabinsArr.splice(selectedArrIndex, 1);
+        }
+
+        var data = {
+          id: cabinet.id,
+          type: 'cabinet',
+          price: cabinet.price,
+          total_price: 0
+        };
+        var total_price = data['price'] * this.duration;
+        data.total_price = total_price;
+        this.$emit('select-item', data);
+      } else if (cabinet.reserved) {
+        this.$notify({
+          title: 'Кабинка занята',
+          message: '',
+          type: 'warning'
+        });
+      } else {
+        this.$notify({
+          title: 'Выберите дату и время',
+          message: '',
+          type: 'warning'
+        });
+      }
     }
   },
   mounted: function mounted() {
     this.getPlaces();
+    this.getCabinets();
   }
 });
 
@@ -92829,10 +92946,8 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "map-floor" }, [
-    _c("h4", { staticClass: "map-floor__title" }, [
-      _vm._v("\n        1 ЭТАЖ\n    "),
-    ]),
+  return _c("div", { staticClass: "map-floor map-floor--second" }, [
+    _c("h4", { staticClass: "map-floor__title" }),
     _vm._v(" "),
     _c("div", { staticStyle: { "font-weight": "bold", color: "red" } }, [
       _vm._v(_vm._s(_vm.timeTitle)),
@@ -92840,9 +92955,70 @@ var render = function () {
     _vm._v(" "),
     _c(
       "section",
-      { staticClass: "reserve-map" },
+      { staticClass: "reserve-map reserve-map--second" },
       [
-        _c("img", { attrs: { src: "/assets/images/first-floor.png" } }),
+        _c("img", {
+          attrs: { src: _vm.$root.api_url + "/assets/images/first-floor.png" },
+        }),
+        _vm._v(" "),
+        _vm._l(_vm.cabinets, function (cabinet, index) {
+          return _c(
+            "div",
+            {
+              staticClass: "reserve-map__cabinet",
+              class: {
+                "reserve-map__cabinet--selected2": cabinet.select,
+              },
+              style: {
+                width: cabinet.width,
+
+                height: cabinet.height,
+                left: cabinet.posX + "px",
+                top: cabinet.posY + "px",
+              },
+              on: {
+                click: function ($event) {
+                  $event.preventDefault()
+                  return _vm.handleSelectCabinet(cabinet, index)
+                },
+              },
+            },
+            [
+              cabinet.reserved
+                ? _c("img", {
+                    attrs: {
+                      src:
+                        "https://admin.baniufa.ru/assets/images/places/cabinet-" +
+                        cabinet.number +
+                        "-res.svg",
+                      width: cabinet.width,
+                      height: cabinet.height,
+                    },
+                  })
+                : cabinet.select
+                ? _c("img", {
+                    attrs: {
+                      src:
+                        "/assets/images/places/cabinet-" +
+                        cabinet.number +
+                        "-sel.png",
+                      width: cabinet.width,
+                      height: cabinet.height,
+                    },
+                  })
+                : _c("img", {
+                    attrs: {
+                      src:
+                        "/assets/images/places/cabinet-" +
+                        cabinet.number +
+                        ".png",
+                      width: cabinet.width,
+                      height: cabinet.height,
+                    },
+                  }),
+            ]
+          )
+        }),
         _vm._v(" "),
         _vm._l(_vm.places, function (place, index) {
           return _c(
@@ -92850,7 +93026,7 @@ var render = function () {
             {
               staticClass: "reserve-map__place",
               class: {
-                "reserve-map__place--selected": place.select,
+                "reserve-map__place--selected2": place.select,
               },
               style: { left: place.posX + "px", top: place.posY + "px" },
               on: {
@@ -92884,9 +93060,18 @@ var render = function () {
                         "-res.svg",
                     },
                   })
+                : place.select
+                ? _c("img", {
+                    attrs: {
+                      src:
+                        "/assets/images/places/place-" +
+                        place.type +
+                        "-sel.png",
+                    },
+                  })
                 : _c("img", {
                     attrs: {
-                      src: "/assets/images/places/place-" + place.type + ".svg",
+                      src: "/assets/images/places/place-" + place.type + ".png",
                     },
                   }),
             ]
