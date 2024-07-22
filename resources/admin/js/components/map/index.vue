@@ -86,9 +86,9 @@ import SecondFloor from "./SecondFloor";
 </script>
 <style lang="scss">
 .reserve-map {
-    width: 865px;
-    max-width: 865px;
-    min-width: 865px;
+    width: 1039px;
+    max-width: 1039px;
+    min-width: 1039px;
     position: relative;
     background-color: #C5C6C6;
     img {
@@ -255,9 +255,9 @@ import SecondFloor from "./SecondFloor";
     }
 }
 .map-floor {
-    width: 865px;
-    max-width: 865px;
-    min-width: 865px;
+    width: 1039px;
+    max-width: 1039px;
+    min-width: 1039px;
     &--second {
         margin-top: 40px;
     }
@@ -271,9 +271,9 @@ import SecondFloor from "./SecondFloor";
 
 }
 .reserve-map {
-    width: 865px;
-    max-width: 865px;
-    min-width: 865px;
+    width: 1039px;
+    max-width: 1039px;
+    min-width: 1039px;
     position: relative;
     background-color: #C5C6C6;
     &--second {
@@ -295,6 +295,10 @@ import SecondFloor from "./SecondFloor";
             }
         }
         svg {
+            max-width: 100%;
+            max-height: 100%;
+        }
+        img {
             max-width: 100%;
             max-height: 100%;
         }
@@ -338,9 +342,11 @@ import SecondFloor from "./SecondFloor";
         cursor: pointer;
         position: absolute;
         z-index: 2;
-        svg {
-            width: 44px;
-            height: 44px;
+        width: 30px;
+        height: 30px;
+        img {
+            width: 30px;
+            height: 30px;
         }
         &--selected {
             &:after {
@@ -359,7 +365,10 @@ import SecondFloor from "./SecondFloor";
             display: block;
             font-size: 13px;
             line-height: 13px;
-            font-weight: bold;
+            color:#fff;
+            font-family: "Forum", serif;
+            font-weight: 400;
+            font-style: normal;
             &--left {
                 left: 6px;
                 top:50%;

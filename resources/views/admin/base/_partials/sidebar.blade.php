@@ -30,13 +30,7 @@
             </li>
             @endif
 
-            @if(Auth::user()->id === 2)
-                <li class="sidebar-nav__item">
-                    <a href="{{route('admin.manual')}}" class="sidebar-nav__link {{ Str::startsWith(Route::current()->getName(),'admin.manual')  ? 'sidebar-nav__link--active' : '' }}">
-                        <span class="sidebar-nav__text">Заказы от админа</span>
-                    </a>
-                </li>
-            @endif
+
 
             @if(Auth::user()->id === 2)
                 <li class="sidebar-nav__item">

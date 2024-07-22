@@ -156,7 +156,7 @@ export default {
                 })
         },
         getPlaces() {
-            axios.get(this.$root.api_url + '/api/places/list/' + 1, {
+            axios.get( '/api/places/list/' + 1, {
                 params: {
                     startDate: this.startDate,
                     endDate: this.endDate,
