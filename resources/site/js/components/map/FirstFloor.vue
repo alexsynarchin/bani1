@@ -23,7 +23,7 @@
                 <span :class="'reserve-map__cabinet-name ' + 'reserve-map__cabinet-name--' + cabinet.number">
                     Кабинка {{cabinet.number}}
                 </span>-->
-                <img v-if="cabinet.reserved" :src="'https://admin.baniufa.ru/assets/images/places/cabinet-' + cabinet.number  + '-res.svg' "
+                <img v-if="cabinet.reserved" :src="'https://admin.baniufa.ru/assets/images/places/cabinet-' + cabinet.number  + '-res.png' "
                      :width="cabinet.width"
                      :height="cabinet.height">
                 <img v-else-if="cabinet.select" :src="'/assets/images/places/cabinet-' + cabinet.number  + '-sel.png' "
@@ -70,7 +70,7 @@
                     'reserve-map__place-number--top' : place.type === 'top',
                     'reserve-map__place-number--down' : place.type === 'down',
                 }">{{place.number}}</span>
-                <img v-if="place.reserved" :src="'/assets/images/places/place-' + place.type  + '-res.svg' ">
+                <img v-if="place.reserved" :src="'/assets/images/places/place-' + place.type  + '-res.png' ">
                 <img v-else-if="place.select" :src="'/assets/images/places/place-' + place.type  + '-sel.png' ">
                 <img  v-else  :src="'/assets/images/places/place-' + place.type  + '.png' ">
 

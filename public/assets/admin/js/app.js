@@ -92978,7 +92978,7 @@ var render = function () {
                       src:
                         "https://admin.baniufa.ru/assets/images/places/cabinet-" +
                         cabinet.number +
-                        "-res.svg",
+                        "-res.png",
                       width: cabinet.width,
                       height: cabinet.height,
                     },
@@ -93045,7 +93045,7 @@ var render = function () {
                       src:
                         "/assets/images/places/place-" +
                         place.type +
-                        "-res.svg",
+                        "-res.png",
                     },
                   })
                 : place.select
