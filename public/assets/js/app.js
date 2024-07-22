@@ -91593,7 +91593,7 @@ var render = function () {
                 ? _c("img", {
                     attrs: {
                       src:
-                        "https://admin.baniufa.ru/assets/images/places/cabinet-" +
+                        "/assets/images/places/cabinet-" +
                         cabinet.number +
                         "-res.png",
                       width: cabinet.width,

@@ -23,7 +23,7 @@
                 <span :class="'reserve-map__cabinet-name ' + 'reserve-map__cabinet-name--' + cabinet.number">
                     Кабинка {{cabinet.number}}
                 </span>-->
-                <img v-if="cabinet.reserved" :src="'https://admin.baniufa.ru/assets/images/places/cabinet-' + cabinet.number  + '-res.png' "
+                <img v-if="cabinet.reserved" :src="'/assets/images/places/cabinet-' + cabinet.number  + '-res.png' "
                      :width="cabinet.width"
                      :height="cabinet.height">
                 <img v-else-if="cabinet.select" :src="'/assets/images/places/cabinet-' + cabinet.number  + '-sel.png' "
