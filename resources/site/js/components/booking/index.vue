@@ -39,7 +39,14 @@
                     2
                 </div>
                 <div class="booking-step__body">
-                    <button class="booking-link" @click.prevent="openMapModal">
+                    <div v-if="reserveData.count > 0" @click.prevent="openMapModal" style="cursor: pointer">
+                        <span class="booking-first__label">Выбрано мест:</span>
+                        <span class="booking-first__value">
+                              {{reserveData.count}}
+                        </span>
+
+                    </div>
+                    <button class="booking-link" @click.prevent="openMapModal" v-else>
                         Выберите любые свободные места
                     </button>
                 </div>
@@ -48,8 +55,16 @@
                 <div class="booking-step__num">
                    3
                 </div>
-                <div class="booking-step__body">
-                    <button class="booking-link" @click.prevent="openContactModal">
+                <div class="booking-step__body" @click.prevent="openContactModal" style="cursor: pointer">
+                    <div v-if="client.name && client.phone">
+                        <span class="booking-first__label">
+                            {{client.name}}
+                        </span>
+                        <span class="booking-first__value">
+                            ({{client.phone}})
+                        </span>
+                    </div>
+                    <button class="booking-link" @click.prevent="openContactModal" v-else>
                         Введите контактные данные
                     </button>
                 </div>
@@ -387,9 +402,16 @@
     }
     .calendar-modal {
         .el-dialog {
+            overflow: hidden;
             min-width: 380px;
             max-width: 520px;
+            border-radius: 20px;
+            background-color: #FBFBFB;
         }
+        .el-dialog__body {
+            padding: 0;
+        }
+        .el-dialog__header { padding: 0}
     }
     .contact-reserve-modal {
         .el-dialog {

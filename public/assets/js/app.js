@@ -4111,6 +4111,21 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -4705,6 +4720,9 @@ function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToAr
 
 function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
 
+//
+//
+//
 //
 //
 //
@@ -8280,7 +8298,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "@charset \"UTF-8\";\n.reserve-inf__btn {\n  cursor: pointer;\n}\n.booking__logo {\n  margin-bottom: 67px;\n}\n.booking__wrap {\n  display: flex;\n  justify-content: center;\n  text-align: center;\n}\n.booking__title {\n  font-weight: 400;\n  margin-bottom: 60px;\n  font-size: 40px;\n  text-align: center;\n  text-transform: uppercase;\n}\n.booking__description {\n  margin-bottom: 25px;\n  font-size: 17px;\n  text-align: center;\n}\n.booking-first {\n  font-size: 17px;\n}\n.booking-first__value {\n  font-weight: 600;\n  color: #CAA769;\n}\n.calendar-modal .el-dialog {\n  min-width: 380px;\n  max-width: 520px;\n}\n.contact-reserve-modal .el-dialog {\n  max-width: 550px;\n  min-width: 380px;\n  padding-left: 60px;\n  padding-right: 60px;\n}\n.map-modal .el-dialog__body {\n  padding: 0;\n}\n.map-modal .el-dialog {\n  min-width: 1039px;\n  max-width: 1039px;\n}\n.result-modal .el-dialog {\n  max-width: 550px;\n  min-width: 380px;\n  padding-left: 60px;\n  padding-right: 60px;\n}\n.booking-link {\n  font-size: 20px;\n  padding: 0;\n  border: none;\n  color: #777777;\n  text-decoration: underline;\n  text-transform: none;\n  /* отображаем курсор в виде руки при наведении; некоторые\n  считают, что необходимо оставлять стрелочный вид для кнопок */\n  cursor: pointer;\n}\n.booking-step {\n  font-family: \"Jost\", sans-serif;\n  font-weight: 400;\n  font-size: 20px;\n  color: #777777;\n  display: flex;\n  align-items: center;\n  padding-bottom: 54px;\n  -moz-column-gap: 39px;\n       column-gap: 39px;\n}\n.booking-step__num {\n  font-weight: 300;\n  font-size: 40px;\n  line-height: 1;\n  width: 51px;\n  height: 51px;\n  background-color: #fff;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  position: relative;\n  color: #CAA769;\n}\n.booking-step__num:before {\n  content: \"\";\n  width: 2px;\n  height: 54px;\n  position: absolute;\n  top: 100%;\n  left: 25px;\n  background-color: #CAA769;\n}\n.booking-step__num--last:before {\n  content: none;\n}\n.booking-step__body {\n  flex: 1;\n  text-align: left;\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "@charset \"UTF-8\";\n.reserve-inf__btn {\n  cursor: pointer;\n}\n.booking__logo {\n  margin-bottom: 67px;\n}\n.booking__wrap {\n  display: flex;\n  justify-content: center;\n  text-align: center;\n}\n.booking__title {\n  font-weight: 400;\n  margin-bottom: 60px;\n  font-size: 40px;\n  text-align: center;\n  text-transform: uppercase;\n}\n.booking__description {\n  margin-bottom: 25px;\n  font-size: 17px;\n  text-align: center;\n}\n.booking-first {\n  font-size: 17px;\n}\n.booking-first__value {\n  font-weight: 600;\n  color: #CAA769;\n}\n.calendar-modal .el-dialog {\n  overflow: hidden;\n  min-width: 380px;\n  max-width: 520px;\n  border-radius: 20px;\n  background-color: #FBFBFB;\n}\n.calendar-modal .el-dialog__body {\n  padding: 0;\n}\n.calendar-modal .el-dialog__header {\n  padding: 0;\n}\n.contact-reserve-modal .el-dialog {\n  max-width: 550px;\n  min-width: 380px;\n  padding-left: 60px;\n  padding-right: 60px;\n}\n.map-modal .el-dialog__body {\n  padding: 0;\n}\n.map-modal .el-dialog {\n  min-width: 1039px;\n  max-width: 1039px;\n}\n.result-modal .el-dialog {\n  max-width: 550px;\n  min-width: 380px;\n  padding-left: 60px;\n  padding-right: 60px;\n}\n.booking-link {\n  font-size: 20px;\n  padding: 0;\n  border: none;\n  color: #777777;\n  text-decoration: underline;\n  text-transform: none;\n  /* отображаем курсор в виде руки при наведении; некоторые\n  считают, что необходимо оставлять стрелочный вид для кнопок */\n  cursor: pointer;\n}\n.booking-step {\n  font-family: \"Jost\", sans-serif;\n  font-weight: 400;\n  font-size: 20px;\n  color: #777777;\n  display: flex;\n  align-items: center;\n  padding-bottom: 54px;\n  -moz-column-gap: 39px;\n       column-gap: 39px;\n}\n.booking-step__num {\n  font-weight: 300;\n  font-size: 40px;\n  line-height: 1;\n  width: 51px;\n  height: 51px;\n  background-color: #fff;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  position: relative;\n  color: #CAA769;\n}\n.booking-step__num:before {\n  content: \"\";\n  width: 2px;\n  height: 54px;\n  position: absolute;\n  top: 100%;\n  left: 25px;\n  background-color: #CAA769;\n}\n.booking-step__num--last:before {\n  content: none;\n}\n.booking-step__body {\n  flex: 1;\n  text-align: left;\n}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -8352,7 +8370,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".calendar-day[data-v-02d5bd1b] {\n  text-align: center;\n  position: relative;\n  font-size: 16px;\n  font-family: \"Jost\", sans-serif;\n  background-color: #fff;\n  color: #2E2E2E;\n  padding: 2.5px;\n  height: 36px;\n}\n.calendar-day__num[data-v-02d5bd1b] {\n  cursor: pointer;\n  height: 100%;\n  align-items: center;\n  justify-content: center;\n  display: flex;\n  border: 1px solid transparent;\n  border-radius: 0;\n  color: #2E2E2E;\n}\n.calendar-day__num--today[data-v-02d5bd1b] {\n  color: #006672;\n  font-weight: bold;\n}\n.calendar-day__num--previous[data-v-02d5bd1b] {\n  color: gray;\n}\n.calendar-day__num--selected[data-v-02d5bd1b] {\n  background-color: #CAA769;\n  border-color: #CAA769;\n  color: #fff;\n}\n.calendar-day--today > span[data-v-02d5bd1b] {\n  color: #fff;\n  border-radius: 9999px;\n  background-color: var(--grey-800);\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".calendar-day[data-v-02d5bd1b] {\n  text-align: center;\n  position: relative;\n  font-size: 16px;\n  font-family: \"Jost\", sans-serif;\n  color: #2E2E2E;\n  padding: 2.5px;\n  height: 36px;\n}\n.calendar-day__num[data-v-02d5bd1b] {\n  cursor: pointer;\n  height: 100%;\n  align-items: center;\n  justify-content: center;\n  display: flex;\n  border: 1px solid transparent;\n  border-radius: 0;\n  color: #2E2E2E;\n}\n.calendar-day__num--today[data-v-02d5bd1b] {\n  color: #006672;\n  font-weight: bold;\n}\n.calendar-day__num--previous[data-v-02d5bd1b] {\n  color: gray;\n}\n.calendar-day__num--selected[data-v-02d5bd1b] {\n  background-color: #CAA769;\n  border-color: #CAA769;\n  color: #fff;\n}\n.calendar-day--today > span[data-v-02d5bd1b] {\n  color: #fff;\n  border-radius: 9999px;\n  background-color: var(--grey-800);\n}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -8424,7 +8442,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".calendar-month[data-v-339b98d4] {\n  position: relative;\n  background-color: var(--grey-200);\n  border: solid 1px var(--grey-300);\n}\n.day-of-week[data-v-339b98d4] {\n  font-family: \"Jost\", sans-serif;\n  font-weight: 400;\n  color: #C7A568;\n  font-size: 17px;\n  background-color: #fff;\n  padding-bottom: 10px;\n  padding-top: 10px;\n  border-bottom: 1px solid #CAA769;\n  margin-bottom: 17px;\n}\n.day-of-week[data-v-339b98d4],\n.days-grid[data-v-339b98d4] {\n  list-style-type: none;\n  margin-left: 0;\n  padding-left: 0;\n  display: grid;\n  grid-template-columns: repeat(7, 1fr);\n}\n.day-of-week > *[data-v-339b98d4] {\n  text-align: right;\n  padding-right: 5px;\n}\n.days-grid[data-v-339b98d4] {\n  height: 100%;\n  position: relative;\n  grid-column-gap: var(--grid-gap);\n  grid-row-gap: var(--grid-gap);\n  border-top: solid 1px var(--grey-200);\n  margin-bottom: 42px;\n}\n.calendar-btn[data-v-339b98d4] {\n  cursor: pointer;\n  color: #fff;\n  background: #C7A568;\n  box-shadow: 0 0 0 transparent;\n  border: 0 solid transparent;\n  border-radius: 6px;\n  padding: 14px 25px;\n  text-transform: uppercase;\n  font-size: 16px;\n  font-weight: 500;\n  text-shadow: 0 0 0 transparent;\n  font-family: \"Jost\", sans-serif;\n}\n.calendar-btn__wrap[data-v-339b98d4] {\n  margin-top: 20px;\n  text-align: center;\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".calendar-month[data-v-339b98d4] {\n  position: relative;\n  background-color: var(--grey-200);\n  border: solid 1px var(--grey-300);\n}\n.calendar-bottom[data-v-339b98d4] {\n  background-color: #FFFFFF;\n  padding: 28px 0;\n}\n.calendar-month-header[data-v-339b98d4] {\n  margin-bottom: 20px;\n  padding: 30px 0 40px 0;\n  background-color: #F3EEE8;\n}\n.day-of-week[data-v-339b98d4] {\n  font-family: \"Jost\", sans-serif;\n  font-weight: 400;\n  color: #C7A568;\n  font-size: 17px;\n  padding-bottom: 10px;\n  padding-top: 10px;\n  border-bottom: 1px solid #CAA769;\n  margin-bottom: 17px;\n}\n.day-of-week[data-v-339b98d4],\n.days-grid[data-v-339b98d4] {\n  list-style-type: none;\n  margin-left: 0;\n  padding-left: 0;\n  display: grid;\n  grid-template-columns: repeat(7, 1fr);\n}\n.day-of-week > *[data-v-339b98d4] {\n  text-align: right;\n  padding-right: 5px;\n}\n.days-grid[data-v-339b98d4] {\n  height: 100%;\n  position: relative;\n  grid-column-gap: var(--grid-gap);\n  grid-row-gap: var(--grid-gap);\n  border-top: solid 1px var(--grey-200);\n  margin-bottom: 42px;\n}\n.calendar-btn[data-v-339b98d4] {\n  cursor: pointer;\n  color: #fff;\n  background: #C7A568;\n  box-shadow: 0 0 0 transparent;\n  border: 0 solid transparent;\n  border-radius: 6px;\n  padding: 14px 25px;\n  text-transform: uppercase;\n  font-size: 16px;\n  font-weight: 500;\n  text-shadow: 0 0 0 transparent;\n  font-family: \"Jost\", sans-serif;\n}\n.calendar-btn__wrap[data-v-339b98d4] {\n  margin-top: 20px;\n  text-align: center;\n}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -89576,23 +89594,49 @@ var render = function () {
             ]),
             _vm._v(" "),
             _c("div", { staticClass: "booking-step__body" }, [
-              _c(
-                "button",
-                {
-                  staticClass: "booking-link",
-                  on: {
-                    click: function ($event) {
-                      $event.preventDefault()
-                      return _vm.openMapModal.apply(null, arguments)
+              _vm.reserveData.count > 0
+                ? _c(
+                    "div",
+                    {
+                      staticStyle: { cursor: "pointer" },
+                      on: {
+                        click: function ($event) {
+                          $event.preventDefault()
+                          return _vm.openMapModal.apply(null, arguments)
+                        },
+                      },
                     },
-                  },
-                },
-                [
-                  _vm._v(
-                    "\n                    Выберите любые свободные места\n                "
+                    [
+                      _c("span", { staticClass: "booking-first__label" }, [
+                        _vm._v("Выбрано мест:"),
+                      ]),
+                      _vm._v(" "),
+                      _c("span", { staticClass: "booking-first__value" }, [
+                        _vm._v(
+                          "\n                          " +
+                            _vm._s(_vm.reserveData.count) +
+                            "\n                    "
+                        ),
+                      ]),
+                    ]
+                  )
+                : _c(
+                    "button",
+                    {
+                      staticClass: "booking-link",
+                      on: {
+                        click: function ($event) {
+                          $event.preventDefault()
+                          return _vm.openMapModal.apply(null, arguments)
+                        },
+                      },
+                    },
+                    [
+                      _vm._v(
+                        "\n                    Выберите любые свободные места\n                "
+                      ),
+                    ]
                   ),
-                ]
-              ),
             ]),
           ]),
           _vm._v(" "),
@@ -89601,25 +89645,56 @@ var render = function () {
               _vm._v("\n               3\n            "),
             ]),
             _vm._v(" "),
-            _c("div", { staticClass: "booking-step__body" }, [
-              _c(
-                "button",
-                {
-                  staticClass: "booking-link",
-                  on: {
-                    click: function ($event) {
-                      $event.preventDefault()
-                      return _vm.openContactModal.apply(null, arguments)
-                    },
+            _c(
+              "div",
+              {
+                staticClass: "booking-step__body",
+                staticStyle: { cursor: "pointer" },
+                on: {
+                  click: function ($event) {
+                    $event.preventDefault()
+                    return _vm.openContactModal.apply(null, arguments)
                   },
                 },
-                [
-                  _vm._v(
-                    "\n                    Введите контактные данные\n                "
-                  ),
-                ]
-              ),
-            ]),
+              },
+              [
+                _vm.client.name && _vm.client.phone
+                  ? _c("div", [
+                      _c("span", { staticClass: "booking-first__label" }, [
+                        _vm._v(
+                          "\n                        " +
+                            _vm._s(_vm.client.name) +
+                            "\n                    "
+                        ),
+                      ]),
+                      _vm._v(" "),
+                      _c("span", { staticClass: "booking-first__value" }, [
+                        _vm._v(
+                          "\n                        (" +
+                            _vm._s(_vm.client.phone) +
+                            ")\n                    "
+                        ),
+                      ]),
+                    ])
+                  : _c(
+                      "button",
+                      {
+                        staticClass: "booking-link",
+                        on: {
+                          click: function ($event) {
+                            $event.preventDefault()
+                            return _vm.openContactModal.apply(null, arguments)
+                          },
+                        },
+                      },
+                      [
+                        _vm._v(
+                          "\n                    Введите контактные данные\n                "
+                        ),
+                      ]
+                    ),
+              ]
+            ),
           ]),
           _vm._v(" "),
           _c("section", { staticClass: "booking-step" }, [
@@ -90130,92 +90205,95 @@ var render = function () {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _vm.dataReady
-    ? _c(
-        "div",
-        { staticClass: "calendar-month" },
-        [
-          _c(
-            "div",
-            {
-              staticStyle: {
-                width: "290px",
-                "margin-right": "auto",
-                "margin-left": "auto",
+    ? _c("div", { staticClass: "calendar-month" }, [
+        _c(
+          "div",
+          { staticClass: "calendar-month-header" },
+          [
+            _c("CalendarDateSelector", {
+              attrs: {
+                "current-date": _vm.today,
+                "selected-date": _vm.selectedDate,
               },
+              on: { dateSelected: _vm.selectDate },
+            }),
+          ],
+          1
+        ),
+        _vm._v(" "),
+        _c(
+          "div",
+          {
+            staticStyle: {
+              width: "300px",
+              "margin-right": "auto",
+              "margin-left": "auto",
             },
-            [
-              _c(
-                "div",
-                { staticClass: "calendar-month-header" },
-                [
-                  _c("CalendarDateSelector", {
-                    attrs: {
-                      "current-date": _vm.today,
-                      "selected-date": _vm.selectedDate,
-                    },
-                    on: { dateSelected: _vm.selectDate },
-                  }),
-                ],
-                1
-              ),
-              _vm._v(" "),
-              _c("CalendarWeekdays"),
-              _vm._v(" "),
-              _c(
-                "ul",
-                { staticClass: "days-grid" },
-                _vm._l(_vm.days, function (day) {
-                  return _c("CalendarMonthDayItem", {
-                    key: day.date,
-                    attrs: {
-                      day: day,
-                      "is-woman": _vm.isWomanDay(day.date),
-                      "is-today": day.date === _vm.today,
-                      "is-previous": day.date < _vm.today,
-                      "is-event": _vm.isEventDate(day.date),
-                      "is-selected-day":
-                        day.date === _vm.reserveData.selectedDay,
-                    },
-                    on: { "select-day": _vm.selectDay },
-                  })
-                }),
-                1
-              ),
-            ],
-            1
-          ),
-          _vm._v(" "),
-          _c("calendar-time", {
-            ref: "calendar_time",
-            attrs: {
-              "min-start-time": _vm.minStartTime,
-              "max-end-time": _vm.maxEndTime,
-            },
-            on: { "select-time": _vm.selectTime },
-          }),
-          _vm._v(" "),
-          _c("div", { staticClass: "calendar-btn__wrap" }, [
+          },
+          [
+            _c("CalendarWeekdays"),
+            _vm._v(" "),
             _c(
-              "button",
-              {
-                staticClass: "calendar-btn",
-                on: {
-                  click: function ($event) {
-                    $event.preventDefault()
-                    return _vm.selectDayAndTime.apply(null, arguments)
+              "ul",
+              { staticClass: "days-grid" },
+              _vm._l(_vm.days, function (day) {
+                return _c("CalendarMonthDayItem", {
+                  key: day.date,
+                  attrs: {
+                    day: day,
+                    "is-woman": _vm.isWomanDay(day.date),
+                    "is-today": day.date === _vm.today,
+                    "is-previous": day.date < _vm.today,
+                    "is-event": _vm.isEventDate(day.date),
+                    "is-selected-day": day.date === _vm.reserveData.selectedDay,
+                  },
+                  on: { "select-day": _vm.selectDay },
+                })
+              }),
+              1
+            ),
+          ],
+          1
+        ),
+        _vm._v(" "),
+        _c(
+          "section",
+          { staticClass: "calendar-bottom" },
+          [
+            _c("calendar-time", {
+              ref: "calendar_time",
+              attrs: {
+                "min-start-time": _vm.minStartTime,
+                "max-end-time": _vm.maxEndTime,
+              },
+              on: { "select-time": _vm.selectTime },
+            }),
+            _vm._v(" "),
+            _c("div", { staticClass: "calendar-btn__wrap" }, [
+              _c(
+                "button",
+                {
+                  staticClass: "calendar-btn",
+                  on: {
+                    click: function ($event) {
+                      $event.preventDefault()
+                      return _vm.selectDayAndTime.apply(null, arguments)
+                    },
                   },
                 },
-              },
-              [_vm._v("Выбрать")]
-            ),
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "calendar-time__descr" }, [
-            _vm._v("\n        Минимальное время брони — 2 часа\n    "),
-          ]),
-        ],
-        1
-      )
+                [_vm._v("Выбрать")]
+              ),
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "calendar-time__descr" }, [
+              _vm._v(
+                "\n            Минимальное время брони — 2 часа\n        "
+              ),
+            ]),
+          ],
+          1
+        ),
+      ])
     : _vm._e()
 }
 var staticRenderFns = []

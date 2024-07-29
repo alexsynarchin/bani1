@@ -75,7 +75,7 @@ export default {
     position: relative;
     font-size: 16px;
     font-family: "Jost", sans-serif;
-    background-color: #fff;
+
     color: #2E2E2E;
     padding: 2.5px;
     height: 36px;

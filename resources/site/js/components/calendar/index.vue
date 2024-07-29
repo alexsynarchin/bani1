@@ -1,6 +1,6 @@
 <template>
     <div class="calendar-month" v-if="dataReady">
-        <div style="width: 290px; margin-right: auto; margin-left: auto;">
+
         <div class="calendar-month-header">
             <CalendarDateSelector
                 :current-date="today"
@@ -8,7 +8,7 @@
                 @dateSelected="selectDate"
             />
         </div>
-
+        <div style="width: 300px; margin-right: auto; margin-left: auto">
         <CalendarWeekdays/>
 
         <ul class="days-grid">
@@ -26,18 +26,21 @@
         </ul>
 
         </div>
-        <calendar-time
-            ref="calendar_time"
-            @select-time="selectTime"
-            :min-start-time="minStartTime"
-            :max-end-time="maxEndTime"
-        ></calendar-time>
-        <div class="calendar-btn__wrap">
-            <button class="calendar-btn" @click.prevent="selectDayAndTime">Выбрать</button>
-        </div>
-        <div class="calendar-time__descr">
-            Минимальное время брони — 2 часа
-        </div>
+        <section class="calendar-bottom">
+            <calendar-time
+                ref="calendar_time"
+                @select-time="selectTime"
+                :min-start-time="minStartTime"
+                :max-end-time="maxEndTime"
+            ></calendar-time>
+            <div class="calendar-btn__wrap">
+                <button class="calendar-btn" @click.prevent="selectDayAndTime">Выбрать</button>
+            </div>
+            <div class="calendar-time__descr">
+                Минимальное время брони — 2 часа
+            </div>
+        </section>
+
     </div>
 </template>
 <script>
@@ -308,13 +311,21 @@ export default {
     background-color: var(--grey-200);
     border: solid 1px var(--grey-300);
 }
-
+.calendar-bottom {
+    background-color: #FFFFFF;
+    padding: 28px 0;
+}
+.calendar-month-header {
+    margin-bottom: 20px;
+    padding: 30px 0 40px 0;
+    background-color: #F3EEE8;
+}
 .day-of-week {
     font-family: "Jost", sans-serif;
     font-weight:400;
     color:#C7A568;
     font-size:17px;
-    background-color: #fff;
+
     padding-bottom: 10px;
     padding-top: 10px;
     border-bottom: 1px solid #CAA769;
