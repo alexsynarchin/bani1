@@ -6248,8 +6248,8 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_2__["default"]({
   data: {
     //api_url:"https://admin.baniufa.ru"
     //api_url:"https://bani.pandabrand.ru"
-    // api_url: "http://welcomerb.ru"
-    api_url: "http://bani-1.loc"
+    api_url: "http://welcomerb.ru" //api_url:"http://bani-1.loc"
+
   }
 });
 vue__WEBPACK_IMPORTED_MODULE_2__["default"].directive('phone', {
