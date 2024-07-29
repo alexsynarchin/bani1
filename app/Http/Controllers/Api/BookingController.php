@@ -39,4 +39,5 @@ class BookingController extends Controller
         }
         return $date->format('Y-m-d');
     }
+
 }

@@ -68,4 +68,19 @@ class ReservationController extends Controller
         return ['dates' => $dates,
             'now' => $dates[0]];
     }
+    public function checkContactData(Request $request)
+    {
+        //dd($request->all());
+        $request -> validate([
+            'name' =>'required',
+            'phone' => 'required',
+            'pers' => 'accepted',
+            'offerta' => 'accepted'
+            ], [
+            'name.required' => 'Введите ваше имя',
+            'phone.required' => 'Введите ваш телефон',
+            'pers.accepted' => 'Подтвердите согласие на обработку персональных данных',
+            'offerta.accepted' => 'Подтвердите согласие с публичной офертой',
+        ]);
+    }
 }

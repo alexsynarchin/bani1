@@ -45,6 +45,7 @@ use App\Http\Controllers\Api\SettingController;
 Route::get('/settings/get-start-time', [SettingController::class, 'getStartTime'])
     -> name('get-start-time');
 use App\Http\Controllers\Api\ReservationController;
+Route::post('/reservation/check-contact', [ReservationController::class, 'checkContactData']);
 Route::get('/reservations', [ReservationController::class, 'index']) -> name('reservations');
 Route::get('/reservations/navigation', [ReservationController::class, 'navigation']) -> name('reservations.navigation');
 

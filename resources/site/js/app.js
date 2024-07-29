@@ -9,14 +9,14 @@ locale.use(lang);
 import VueCookies from 'vue-cookies';
 Vue.use(VueCookies, { expires: '30min'});
 Vue.component('booking', require('./components/booking').default);
-Vue.component('booking-test', require('./components/booking-test').default);
+
 const app = new Vue({
     el: '#app',
     data: {
       //api_url:"https://admin.baniufa.ru"
        //api_url:"https://bani.pandabrand.ru"
-        api_url: "http://welcomerb.ru"
-        //api_url:"http://bani-1.loc"
+       // api_url: "http://welcomerb.ru"
+        api_url:"http://bani-1.loc"
     }
 });
 Vue.directive('phone', {

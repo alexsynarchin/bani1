@@ -74,8 +74,9 @@ export default {
     text-align: center;
     position: relative;
     font-size: 16px;
+    font-family: "Jost", sans-serif;
     background-color: #fff;
-    color: var(--grey-800);
+    color: #2E2E2E;
     padding: 2.5px;
     height: 36px;
     &__num {
@@ -84,35 +85,35 @@ export default {
         align-items: center;
         justify-content: center;
         display: flex;
-        border: 1px solid #006672;
-        border-radius: 5px;
-        color: #006672;;
+        border: 1px solid transparent;
+        border-radius: 0;
+        color: #2E2E2E;
         &--today {
-            color:#000000;
+            color: #006672;
             font-weight: bold;
         }
         &--not-current {
-            color: rgba(0,102,114,0.6);
-            border-color:rgba(0,102,114,0.6);
+           // color: rgba(0,102,114,0.6);
+            //border-color:rgba(0,102,114,0.6);
         }
 
 
 
         &--previous {
-            color: rgba(0,102,114,0.6);
-            border-color:rgba(0,102,114,0.6);
+            color: gray;
+            //border-color:rgba(0,102,114,0.6);
         }
         &--event {
 
         }
         &--woman {
-            background-color: pink;
-            border-color:  pink;
-            color: #fff;
+            //background-color: pink;
+            //border-color:  pink;
+            //color: #fff;
         }
         &--selected {
-            background-color: #006672;
-            border-color:  #006672;
+            background-color: #CAA769;
+            border-color:  #CAA769;
             color: #fff;
         }
     }

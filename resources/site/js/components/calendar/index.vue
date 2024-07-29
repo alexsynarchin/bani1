@@ -24,7 +24,7 @@
                 @select-day="selectDay"
             />
         </ul>
-        <calendar-legend></calendar-legend>
+
         </div>
         <calendar-time
             ref="calendar_time"
@@ -310,11 +310,15 @@ export default {
 }
 
 .day-of-week {
-    color: var(--grey-800);
-    font-size: 18px;
+    font-family: "Jost", sans-serif;
+    font-weight:400;
+    color:#C7A568;
+    font-size:17px;
     background-color: #fff;
-    padding-bottom: 5px;
+    padding-bottom: 10px;
     padding-top: 10px;
+    border-bottom: 1px solid #CAA769;
+    margin-bottom: 17px;
 }
 
 .day-of-week,
@@ -337,17 +341,21 @@ export default {
     grid-column-gap: var(--grid-gap);
     grid-row-gap: var(--grid-gap);
     border-top: solid 1px var(--grey-200);
+    margin-bottom: 42px;
 }
 .calendar-btn {
     cursor: pointer;
     color: #fff;
-    background: #3097A1;
+    background: #C7A568;
     box-shadow: 0 0 0 transparent;
     border: 0 solid transparent;
     border-radius: 6px;
-    padding: 6px 30px;
+    padding: 14px 25px;
+    text-transform: uppercase;
     font-size: 16px;
+    font-weight: 500;
     text-shadow: 0 0 0 transparent;
+    font-family: "Jost", sans-serif;
     &__wrap {
         margin-top: 20px;
         text-align: center;
