@@ -382,7 +382,7 @@
         font-size: 17px;
         &__value {
             font-weight: 600;
-            color: #006672;
+            color: #CAA769;
         }
     }
     .calendar-modal {
