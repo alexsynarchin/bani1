@@ -16,6 +16,7 @@
         :duration="duration"
         :can-select="canSelect"
         :selected-places-arr="selectedPlacesArrFirst"
+        :selected-cabins-arr="selectedCabinsArr"
         :start-date="startDate"
         :end-date="endDate"
         @select-item="selectReservationItem"

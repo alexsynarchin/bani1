@@ -93,6 +93,7 @@ export default {
             type: String,
             default: "",
         },
+
         selectedPlacesArr: {
             type: Array,
             default: function () {

@@ -5784,6 +5784,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 
 
@@ -90927,6 +90928,7 @@ var render = function () {
           duration: _vm.duration,
           "can-select": _vm.canSelect,
           "selected-places-arr": _vm.selectedPlacesArrFirst,
+          "selected-cabins-arr": _vm.selectedCabinsArr,
           "start-date": _vm.startDate,
           "end-date": _vm.endDate,
         },
