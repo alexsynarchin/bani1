@@ -197,7 +197,7 @@ export default {
                 let price = 0;
                 if (this.duration > 2) {
                     let discount_time = this.duration - 2;
-                    let discount_price = data['price'] - 100;
+                    let discount_price = data['price'] - 150;
                     price = data['price'] * 2;
                     price = price + (discount_price * discount_time)
                 } else {

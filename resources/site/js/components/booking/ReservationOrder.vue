@@ -82,8 +82,8 @@ export default {
     },
     methods: {
         submitForm() {
-          /*  this.loading = true;
-            axios.post(this.$root.api_url + '/api/reservation-order', {client:this.form, reservation:this.reserveData, reservations:this.reservations})
+            this.loading = true;
+            axios.post(this.$root.api_url + '/api/reservation-order', {client:this.client, reservation:this.reserveData, reservations:this.reservations})
             .then((response) => {
                 console.log(response.data);
                 window.location.href=response.data.formUrl;
@@ -92,7 +92,7 @@ export default {
             .catch((error) => {
                 this.loading = false;
                 this.errors.record(error.response.data.errors);
-            })*/
+            })
         }
     }
 }

@@ -43,6 +43,10 @@ Route::group(['middleware' => 'auth'], function () {
         ->name('setting.set-start-time');
     Route::get('/settings/get-start-time', [SettingController::class, 'getStartTime'])
         ->name('setting.get-start-time');
+    Route::post('/setting/set-prices', [SettingController::class, 'setPrices'])
+        ->name('setting.set-prices');
+    Route::get('/settings/get-prices', [SettingController::class, 'getPrices'])
+        ->name('setting.get-prices');
     Route::apiResource('/event-dates',EventDateController::class);
 });
 

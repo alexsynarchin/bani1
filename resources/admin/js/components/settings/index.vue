@@ -50,7 +50,21 @@
                 placeholder="Выбрать время">
             </el-time-select>
         </el-form-item>
+
         <el-button type="success" @click.prevent="setStartTime">Сохранить</el-button>
+    </el-form>
+    <el-form v-model="prices" label-position="top" class="mb-4">
+
+        <el-form-item label="Стоимость мест">
+            <el-input-number :min="0" :controls="false" v-model="prices.places"></el-input-number>
+        </el-form-item>
+        <el-form-item v-for="(cabinet, index) in prices.cabinets"
+                      :key="cabinet.id"
+                      :label="'Кабинка №' + cabinet.number"
+        >
+            <el-input-number :min="0" :controls="false" v-model="prices.cabinets[index].price"></el-input-number>
+        </el-form-item>
+        <el-button type="success" @click.prevent="setPrices">Сохранить</el-button>
     </el-form>
     <event-dates></event-dates>
 </section>
@@ -68,7 +82,11 @@ export default {
                     default: '17:00',
                     day_off:'12:00',
                     saturday: '12:00',
-                    sunday: '11:00'
+                    sunday: '11:00',
+                },
+                prices: {
+                    places: 0,
+                    cabinets: []
                 },
                 errors: new Errors(),
             }
@@ -96,9 +114,25 @@ export default {
                         this.errors.record(error.response.data.errors)
                     })
             },
+            getPrices() {
+                axios.get('/admin/api/settings/get-prices')
+                    .then((response) => {
+                        this.prices = response.data;
+                    })
+            },
+            setPrices() {
+                axios.post('/admin/api/setting/set-prices', this.prices)
+                    .then((response) => {
+                        //this.prices = response.data
+                    })
+                    .catch((error) => {
+                        this.errors.record(error.response.data.errors)
+                    })
+            }
         },
     mounted() {
         this.getStartTime();
+        this.getPrices();
     }
 }
 </script>

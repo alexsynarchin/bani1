@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Admin\Api;
 
 use App\Http\Controllers\Controller;
+use App\Models\Cabinet;
+use App\Models\Place;
 use App\Models\Setting;
 use Illuminate\Http\Request;
 
@@ -69,5 +71,34 @@ class SettingController extends Controller
             $start_times[$setting->name] = $setting->value;
         }
         return $start_times;
+    }
+    public function getPrices()
+    {
+        $prices = [];
+        $place = Place::first();
+        $prices['places'] = $place->price;
+        $cabinets = Cabinet::all();
+        foreach ($cabinets as $cabinet) {
+            $prices['cabinets'][] = [
+                'id' => $cabinet->id,
+                'number' => $cabinet->number,
+                'price' => $cabinet->price,];
+
+        }
+        return $prices;
+    }
+
+    public function setPrices(Request $request)
+    {
+        $places = Place::all();
+        foreach ($places as $place) {
+            $place->price = $request->get('places');
+            $place->save();
+        }
+        foreach ($request->get('cabinets') as $cabinetForm) {
+            $cabinet = Cabinet::findOrFail($cabinetForm['id']);
+            $cabinet->price = $cabinetForm['price'];
+            $cabinet->save();
+        }
     }
 }
