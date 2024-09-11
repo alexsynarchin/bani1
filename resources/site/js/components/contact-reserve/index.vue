@@ -105,6 +105,7 @@
         }
     }
     .form-checkbox {
+        display: block;
         margin-bottom: 10px;
         $form-checkbox: &;
         position: relative;
