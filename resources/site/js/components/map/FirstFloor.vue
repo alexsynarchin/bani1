@@ -3,7 +3,7 @@
         <h4 class="map-floor__title">
 
         </h4>
-        <div style="font-weight: bold; color:red;">{{timeTitle}}</div>
+        <div style="font-weight: bold; color:red; text-align: center">{{timeTitle}}</div>
         <section class="reserve-map reserve-map--second">
             <img :src="$root.api_url + '/assets/images/first-floor.png'">
             <div v-for="(cabinet, index) in cabinets"

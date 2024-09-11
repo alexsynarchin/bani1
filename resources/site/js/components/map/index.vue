@@ -1,9 +1,9 @@
 <template>
 <section>
-    <a href="" class="booking-link" @click.prevent="showReservedPlaces">
+    <!--<a href="" class="booking-link" @click.prevent="showReservedPlaces">
         Посмотреть все бронирования на сегодня
-    </a>
-    <div style="color: #006672; margin-bottom: 20px; font-size: 17px; " v-if="reserveData.count > 0">
+    </a>-->
+    <div style="color: #caa768; margin-bottom: 20px; font-size: 17px; text-align: center" v-if="reserveData.count > 0">
         Забронировано мест: <span style="font-weight: bold;">{{reserveData.count}}</span><br>
         На сумму: <span style="font-weight: bold;">{{reserveData.price}} ₽</span><br>
         <br>
@@ -271,8 +271,8 @@ import ReservedPlaces from "../reserved-places/index.vue";
     }
 }
 .map-floor {
-    width: 865px;
-    max-width: 865px;
+    width: 100%;
+    max-width: 100%;
     min-width: 865px;
     &--second {
         margin-top: 40px;
@@ -449,8 +449,8 @@ import ReservedPlaces from "../reserved-places/index.vue";
     }
 }
 .map-floor {
-    width: 865px;
-    max-width: 865px;
+    width: 100%;
+    max-width: 100%;
     min-width: 865px;
     &--second {
         margin-top: 40px;

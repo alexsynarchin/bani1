@@ -113,7 +113,7 @@
     &__btn {
         margin-bottom: 20px;
         color: #fff;
-        background: #3097A1;
+        background: #dfb05c;
         box-shadow: 0 0 0 transparent;
         border: 0 solid transparent;
         border-radius: 6px;
