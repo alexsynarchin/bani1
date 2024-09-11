@@ -198,6 +198,7 @@ export default {
         margin-bottom: 20px;
     }
     &__btn {
+        width: 100%;
         margin-top: 35px;
         color: #fff;
         background: #CAA769;
