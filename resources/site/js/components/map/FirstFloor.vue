@@ -23,13 +23,13 @@
                 <span :class="'reserve-map__cabinet-name ' + 'reserve-map__cabinet-name--' + cabinet.number">
                     Кабинка {{cabinet.number}}
                 </span>-->
-                <img v-if="cabinet.reserved" :src="'/assets/images/places/cabinet-' + cabinet.number  + '-res.png' "
+                <img v-if="cabinet.reserved" :src="$root.api_url + '/assets/images/places/cabinet-' + cabinet.number  + '-res.png' "
                      :width="cabinet.width"
                      :height="cabinet.height">
-                <img v-else-if="cabinet.select" :src="'/assets/images/places/cabinet-' + cabinet.number  + '-sel.png' "
+                <img v-else-if="cabinet.select" :src="$root.api_url + '/assets/images/places/cabinet-' + cabinet.number  + '-sel.png' "
                      :width="cabinet.width"
                      :height="cabinet.height">
-                <img v-else  :src="'/assets/images/places/cabinet-' + cabinet.number  + '.png' "
+                <img v-else  :src="$root.api_url + '/assets/images/places/cabinet-' + cabinet.number  + '.png' "
                      :width="cabinet.width"
                      :height="cabinet.height">
 
