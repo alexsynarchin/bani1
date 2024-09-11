@@ -2,7 +2,7 @@
     <div class="booking__wrap">
         <section class="booking">
             <figure class="booking__logo">
-                <img src="/assets/images/logo.svg">
+                <img :src="$root.api_url + '/assets/images/logo.svg'">
             </figure>
             <h3 class="booking__title">Онлайн-бронирование</h3>
 
@@ -332,7 +332,7 @@
              this.resultClosed();
             },
             resultClosed() {
-               window.location.href=('https://baniufa.ru/reservation.html');
+               window.location.href=('https://novomostovye.ru/reservation');
                 //window.location.href=('http://bani.loc');
             },
             getOrderInf(order_id) {
