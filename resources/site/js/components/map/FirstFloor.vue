@@ -70,9 +70,9 @@
                     'reserve-map__place-number--top' : place.type === 'top',
                     'reserve-map__place-number--down' : place.type === 'down',
                 }">{{place.number}}</span>
-                <img v-if="place.reserved" :src="'/assets/images/places/place-' + place.type  + '-res.png' ">
-                <img v-else-if="place.select" :src="'/assets/images/places/place-' + place.type  + '-sel.png' ">
-                <img  v-else  :src="'/assets/images/places/place-' + place.type  + '.png' ">
+                <img v-if="place.reserved" :src="$root.api_url + '/assets/images/places/place-' + place.type  + '-res.png' ">
+                <img v-else-if="place.select" :src="$root.api_url + '/assets/images/places/place-' + place.type  + '-sel.png' ">
+                <img  v-else  :src="$root.api_url + '/assets/images/places/place-' + place.type  + '.png' ">
 
                 <!---
                 <svg viewBox="0 0 44 44" v-if="place.reserved">
