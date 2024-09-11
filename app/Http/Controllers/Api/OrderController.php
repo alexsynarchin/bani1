@@ -120,8 +120,8 @@ class  OrderController extends Controller
         $order -> alfa_order_id = $response['orderId'];
         $order -> save();
 
-       /* CancellOrder::dispatch($order)
-            ->delay(now()->addMinutes(6)); */
+       CancellOrder::dispatch($order)
+            ->delay(now()->addMinutes(1));
         return $response;
     }
     public function getOrderInf(Request $request) {
