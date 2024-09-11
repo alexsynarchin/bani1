@@ -15,7 +15,7 @@ const app = new Vue({
     data: {
       //api_url:"https://admin.baniufa.ru"
        //api_url:"https://bani.pandabrand.ru"
-     api_url: "http://welcomerb.ru"
+     api_url: "http://reservation.novomostovye.ru/"
        //api_url:"http://bani-1.loc"
     }
 });
