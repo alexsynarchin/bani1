@@ -121,7 +121,7 @@ class  OrderController extends Controller
         $order -> save();
 
        CancellOrder::dispatch($order)
-            ->delay(now()->addMinutes(1));
+            ->delay(now()->addMinutes(2));
         return $response;
     }
     public function getOrderInf(Request $request) {
