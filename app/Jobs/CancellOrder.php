@@ -46,7 +46,7 @@ class CancellOrder implements ShouldQueue
         );
         $alfa_pay = new PaymentService();
         $response = $alfa_pay -> gateway('getOrderStatus.do', $data);
-
+        dd($response);
         if($response['OrderStatus'] === 2) {
             $this->order -> status = 'success';
             $this->order->save();
