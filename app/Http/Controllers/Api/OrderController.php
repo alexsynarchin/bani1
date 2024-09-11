@@ -116,7 +116,7 @@ class  OrderController extends Controller
         );
         $alfa_pay = new PaymentService();
         $response = $alfa_pay -> gateway('register.do', $data);
-        dd($response);
+
         $order -> alfa_order_id = $response['orderId'];
         $order -> save();
 
