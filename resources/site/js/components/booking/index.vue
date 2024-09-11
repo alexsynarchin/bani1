@@ -441,7 +441,7 @@
     }
     .booking-link {
         font-size: 20px;
-
+        background: none;
         padding: 0;
         border: none;
         color: #777777;
