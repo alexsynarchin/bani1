@@ -43,9 +43,9 @@ class Reservation extends Model
         $cost = $this->reservationable->price;
         $sum = 0;
         if ($diff > 120 && $this->reservationable_type === 'App\Models\Place') {
-            $sum = 1100;
+            $sum = 1400;
             $diff = $diff - 120;
-            $sum = $sum + (450 * $diff) / 60;
+            $sum = $sum + (550 * $diff) / 60;
         } else {
             $sum = ($cost * $diff) / 60;
         }
