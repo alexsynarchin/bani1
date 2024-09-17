@@ -170,4 +170,6 @@ class ReservationsController extends Controller
         $order = ['test'=>'test'];
         Mail::to('gwynbleid11@yandex.ru')->send(new OrderMail($order));
     }
+
+
 }

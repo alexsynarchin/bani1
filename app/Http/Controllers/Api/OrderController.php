@@ -133,7 +133,7 @@ class  OrderController extends Controller
         );
         $alfa_pay = new PaymentService();
         $response = $alfa_pay -> gateway('getOrderStatus.do', $data);
-        return $response;
+        return $response['OrderStatus'];
     }
 
     public function orderTest(Request $request)
