@@ -51,7 +51,7 @@ class CancellOrder implements ShouldQueue
             $this->order -> status = 'success';
             $this->order->save();
             $emails = [
-                'gwynbleid11@yandex.ru'
+                'novomostovye@gmail.com','gwynbleid11@yandex.ru'
             ];
             foreach ($emails as $email) {
                 Mail::to($email)->send(new OrderMail($this->order));
