@@ -30,7 +30,7 @@ class OrderMail extends Mailable
      */
     public function build()
     {
-        $mail = $this->from('gwynbleid11@yandex.ru')
+        $mail = $this->from(env('MAIL_FROM_ADDRESS'))
             -> subject('Новое бронирование (Номер заказа ' . $this->order->id . ')' );
         return $mail->view('mails.order', ['order' => $this->order]);
     }

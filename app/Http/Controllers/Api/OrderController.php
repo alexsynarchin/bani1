@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use App\Jobs\CancellOrder;
+use App\Mail\OrderMail;
 use App\Models\Cabinet;
 use App\Models\Client;
 use App\Models\Reservation;
@@ -13,6 +14,7 @@ use App\Models\Order;
 use App\Models\Place;
 use App\Services\PaymentService;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class  OrderController extends Controller
 {
@@ -138,7 +140,8 @@ class  OrderController extends Controller
 
     public function orderTest(Request $request)
     {
-        dd($request->all());
+        $order = Order::findOrFail(1);
+        Mail::to('gwynbleid11@yandex.ru')->send(new OrderMail($order));
     }
 
 }
