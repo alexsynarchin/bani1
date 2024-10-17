@@ -137,7 +137,8 @@ export default {
     },
     methods: {
         getCabinets() {
-            axios.get(this.$root.api_url + '/api/cabinets/list/' + 2, {
+            axios.get(this.$root.api_url + '/api/cabinets/list/' + 1
+                , {
                 params: {
                     startDate: this.startDate,
                     endDate: this.endDate,

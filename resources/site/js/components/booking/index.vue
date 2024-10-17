@@ -113,7 +113,8 @@
             >
                 <reserve-map ref="reserve_map"
                              @select-item = "selectReserveItem"
-                             :selected-cabins-arr="selectedCabinsArr"
+                             :selected-cabins-arr-firs="selectedCabinsArrFirst"
+                             :selected-cabins-arr-second="selectedCabinsArrSecond"
                              :selected-places-arr-first="selectedPlacesArrFirst"
                              :selected-places-arr-second="selectedPlacesArrSecond"
                              :reserve-data="reserveData"
@@ -181,7 +182,8 @@
              client: {},
              selectedPlacesArrFirst: [],
              selectedPlacesArrSecond: [],
-             selectedCabinsArr: [],
+             selectedCabinsArrFirst: [],
+             selectedCabinsArrSecond: [],
              duration:0,
              resultVisible:false,
              contactModalVisible:false,

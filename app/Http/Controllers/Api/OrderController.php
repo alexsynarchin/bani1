@@ -141,7 +141,7 @@ class  OrderController extends Controller
     public function orderTest(Request $request)
     {
         $order = Order::findOrFail(1);
-        Mail::to('gwynbleid11@yandex.ru')->send(new OrderMail($order));
+        Mail::to('novomostovye@gmail.com')->send(new OrderMail($order));
     }
 
 }

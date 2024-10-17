@@ -16,12 +16,22 @@
         :duration="duration"
         :can-select="canSelect"
         :selected-places-arr="selectedPlacesArrFirst"
-        :selected-cabins-arr="selectedCabinsArr"
+        :selected-cabins-arr="selectedCabinsArrFirst"
         :start-date="startDate"
         :end-date="endDate"
         @select-item="selectReservationItem"
     ></first-floor>
-
+    <second-floor
+        :date="date"
+        :time-title="reserveData.selectedDayString +  ' с ' + reserveData.startTime + ' до '  + reserveData.endTime"
+        :duration="duration"
+        :can-select="canSelect"
+        :selected-places-arr="selectedPlacesArrSecond"
+        :selected-cabins-arr="selectedCabinsArrSecond"
+        :start-date="startDate"
+        :end-date="endDate"
+        @select-item="selectReservationItem"
+    ></second-floor>
     <reserved-places
         ref="reserved_places">
     </reserved-places>
@@ -45,7 +55,13 @@ import ReservedPlaces from "../reserved-places/index.vue";
                     return [];
                 }
             },
-            selectedCabinsArr: {
+            selectedCabinsArrFirst: {
+                type:Array,
+                default: function (){
+                    return [];
+                }
+            },
+            selectedCabinsArrSecond: {
                 type:Array,
                 default: function (){
                     return [];
