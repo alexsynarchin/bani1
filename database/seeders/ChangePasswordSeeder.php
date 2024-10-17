@@ -15,8 +15,8 @@ class ChangePasswordSeeder extends Seeder
      */
     public function run()
     {
-        $user = User::where('email', 'admin@novomostovye.ru')->firstOrFail();
-        $user -> password = Hash::make('h<WMd?>[QMR79gp');
+        $user = User::where('email', 'admin3@novomostovye.ru')->firstOrFail();
+        $user -> password = Hash::make('FL@C]!qbKo;:5jg');
         $user->save();
     }
 }
