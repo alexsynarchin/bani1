@@ -298,7 +298,7 @@ import ReservedPlaces from "../reserved-places/index.vue";
         text-align: center;
         font-weight: 400;
         font-size: 17px;
-        color: #006672;
+        color: #caa769;
     }
 
 }
