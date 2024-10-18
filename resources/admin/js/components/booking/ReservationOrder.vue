@@ -44,12 +44,21 @@
             </li>
 
         </ul>
+        <div class="reservation-form__group">
+            <label class="reservation-form__label">
+                Тип бронирования
+            </label>
+            <select class="form-select form-control" name="type"  v-model="form.type"  :class="{'is-invalid': errors.has('client.type')}">
+                <option :value="item.value" v-for="item in types">{{item.label}}</option>
+            </select>
+            <div class="invalid-feedback" v-text="errors.get('client.type')"></div>
+        </div>
         <div class="reservation-order__price">
-            СУММА К ОПЛАТЕ : {{reserveData.price}} ₽
+            СУММА  : {{reserveData.price}} ₽
         </div>
 
         <button class="reservation-form__btn" @click.prevent="submitForm">
-            Оплатить
+           Забронировать
         </button>
     </div>
 </template>
@@ -72,27 +81,57 @@ export default {
     },
     data() {
         return {
+            types: [
+                {
+                    label:'Безнал',
+                    value:"non-cash"
+                },
+                {
+                    label:'Взаимозачет',
+                    value:"offsetting"
+                },
+                {
+                    label:'Перенос',
+                    value:"transfer"
+                },
+                {
+                    label:'Подарочные карты',
+                    value:"sert"
+                },
+                {
+                    label:'Учредитель',
+                    value:"founder"
+                },
+                {
+                    label:'Пригласительный',
+                    value:'invitation'
+                },
+            ],
             loading:false,
             form: {
                 phone: '',
-                name: ''
+                name: '',
+                type: ""
             },
             errors: new Errors(),
         }
     },
     methods: {
         submitForm() {
-            this.loading = true;
-            axios.post(this.$root.api_url + '/api/reservation-order', {client:this.client, reservation:this.reserveData, reservations:this.reservations})
-            .then((response) => {
-                console.log(response.data);
-                window.location.href=response.data.formUrl;
-                this.loading.false;
-            })
-            .catch((error) => {
-                this.loading = false;
-                this.errors.record(error.response.data.errors);
-            })
+             let client = this.client;
+             client.type = this.form.type;
+            axios.post( '/admin/api/reservation/order', {client:client,
+                reservation:this.reserveData, reservations:this.reservations})
+                .then((response) => {
+                    this.$notify({
+                        title: 'Места забронированы',
+                        type: 'success'
+                    });
+                    this.$emit('close-reserve-modal');
+                })
+                .catch((error) => {
+                    this.errors.record(error.response.data.errors);
+                })
         }
     }
 }

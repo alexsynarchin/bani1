@@ -59,6 +59,7 @@ class ReservationsController extends Controller
     }
 
     public function order(Request $request) {
+
         $request -> validate([
             'client.name' =>'required',
             'client.phone' => 'required',
