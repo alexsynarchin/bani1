@@ -52,8 +52,9 @@ export default {
 .calendar-date-selector {
     display: flex;
     justify-content: center;
-    color: #006672;
-    font-size: 17px;
+    color: #C7A568;
+    font-size: 20px;
+    font-family: "Jost", sans-serif;
     &__month {
         text-transform: capitalize;
         margin-left: 15px;

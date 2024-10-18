@@ -1,25 +1,46 @@
 <template>
 <section>
-    <div style="color: #006672; margin-bottom: 20px; font-size: 17px; " v-if="reserveData.count > 0">
+    <!--<a href="" class="booking-link" @click.prevent="showReservedPlaces">
+        Посмотреть все бронирования на сегодня
+    </a>-->
+    <div style="color: #caa768; margin-bottom: 20px; font-size: 17px; text-align: center" v-if="reserveData.count > 0">
         Забронировано мест: <span style="font-weight: bold;">{{reserveData.count}}</span><br>
-        На сумму: <span style="font-weight: bold;">{{reserveData.price}} ₽</span>
+        На сумму: <span style="font-weight: bold;">{{reserveData.price}} ₽</span><br>
+        <br>
+
     </div>
+
     <first-floor
         :date="date"
+        :time-title="reserveData.selectedDayString +  ' с ' + reserveData.startTime + ' до '  + reserveData.endTime"
         :duration="duration"
         :can-select="canSelect"
         :selected-places-arr="selectedPlacesArrFirst"
+        :selected-cabins-arr="selectedCabinsArrFirst"
         :start-date="startDate"
         :end-date="endDate"
         @select-item="selectReservationItem"
-        :time-title="reserveData.selectedDayString +  ' с ' + reserveData.startTime + ' до '  + reserveData.endTime"
     ></first-floor>
-
+    <second-floor
+        :date="date"
+        :time-title="reserveData.selectedDayString +  ' с ' + reserveData.startTime + ' до '  + reserveData.endTime"
+        :duration="duration"
+        :can-select="canSelect"
+        :selected-places-arr="selectedPlacesArrSecond"
+        :selected-cabins-arr="selectedCabinsArrSecond"
+        :start-date="startDate"
+        :end-date="endDate"
+        @select-item="selectReservationItem"
+    ></second-floor>
+    <reserved-places
+        ref="reserved_places">
+    </reserved-places>
 </section>
 </template>
 <script>
 import FirstFloor from "./FirstFloor";
 import SecondFloor from "./SecondFloor";
+import ReservedPlaces from "../reserved-places/index.vue";
     export default {
         props: {
             selectedPlacesArrFirst: {
@@ -34,7 +55,13 @@ import SecondFloor from "./SecondFloor";
                     return [];
                 }
             },
-            selectedCabinsArr: {
+            selectedCabinsArrFirst: {
+                type:Array,
+                default: function (){
+                    return [];
+                }
+            },
+            selectedCabinsArrSecond: {
                 type:Array,
                 default: function (){
                     return [];
@@ -66,6 +93,7 @@ import SecondFloor from "./SecondFloor";
             }
         },
         components: {
+            ReservedPlaces,
             FirstFloor,
             SecondFloor,
         },
@@ -77,7 +105,10 @@ import SecondFloor from "./SecondFloor";
         methods: {
             selectReservationItem(data) {
                 this.$emit('select-item', data);
-            }
+            },
+            showReservedPlaces() {
+                this.$refs.reserved_places.showPlaces(this.reserveData)
+            },
         },
         mounted() {
 
@@ -156,11 +187,11 @@ import SecondFloor from "./SecondFloor";
         cursor: pointer;
         position: absolute;
         z-index: 2;
-        width: 44px;
-        height: 44px;
-        svg {
-            width: 44px;
-            height: 44px;
+        width: 30px;
+        height: 30px;
+        img {
+            width: 30px;
+            height: 30px;
         }
         &--selected {
             &:after {
@@ -175,6 +206,7 @@ import SecondFloor from "./SecondFloor";
         }
 
         &-number {
+            color: #fff;
             position: absolute;
             display: block;
             font-size: 13px;
@@ -255,9 +287,9 @@ import SecondFloor from "./SecondFloor";
     }
 }
 .map-floor {
-    width: 1039px;
-    max-width: 1039px;
-    min-width: 1039px;
+    width: 100%;
+    max-width: 100%;
+    min-width: 865px;
     &--second {
         margin-top: 40px;
     }
@@ -295,10 +327,6 @@ import SecondFloor from "./SecondFloor";
             }
         }
         svg {
-            max-width: 100%;
-            max-height: 100%;
-        }
-        img {
             max-width: 100%;
             max-height: 100%;
         }
@@ -342,11 +370,9 @@ import SecondFloor from "./SecondFloor";
         cursor: pointer;
         position: absolute;
         z-index: 2;
-        width: 30px;
-        height: 30px;
-        img {
-            width: 30px;
-            height: 30px;
+        svg {
+            width: 44px;
+            height: 44px;
         }
         &--selected {
             &:after {
@@ -365,10 +391,7 @@ import SecondFloor from "./SecondFloor";
             display: block;
             font-size: 13px;
             line-height: 13px;
-            color:#fff;
-            font-family: "Forum", serif;
-            font-weight: 400;
-            font-style: normal;
+            font-weight: bold;
             &--left {
                 left: 6px;
                 top:50%;
@@ -442,8 +465,8 @@ import SecondFloor from "./SecondFloor";
     }
 }
 .map-floor {
-    width: 865px;
-    max-width: 865px;
+    width: 100%;
+    max-width: 100%;
     min-width: 865px;
     &--second {
         margin-top: 40px;

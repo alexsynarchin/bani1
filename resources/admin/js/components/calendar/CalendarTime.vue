@@ -3,7 +3,7 @@
 <section class="calendar-time">
         <div class="calendar-time__item">
             <label class="calendar-time__label">
-                Приход
+                ПРИБЫТИЕ
             </label>
             <el-time-select
                 :editable="false"
@@ -21,7 +21,7 @@
         </div>
         <div class="calendar-time__item">
             <label class="calendar-time__label">
-                Уход
+                ОТБЫТИЕ
             </label>
             <el-time-select
                 :editable="false"
@@ -32,7 +32,7 @@
                 :picker-options="{
                   start: minEndTime,
                   step: '00:30',
-                  end:maxEndTime
+                  end:maxEndTime,
 
 
 }">
@@ -51,7 +51,7 @@ export default {
         maxEndTime: {
             type:String,
             default: '24:00'
-        },
+        }
     },
     data() {
         return {
@@ -98,13 +98,14 @@ export default {
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
+    margin-bottom: 27px;
     &__label {
         margin-bottom: 0;
-        color: #006672;
+        color: #000000;
         text-transform: uppercase;
         margin-right: 10px;
-        font-family: 'Metro', sans-serif;
-        font-size: 17px;
+        font-family: 'Forum', sans-serif;
+        font-size: 20px;
     }
     &__item {
         display: flex;

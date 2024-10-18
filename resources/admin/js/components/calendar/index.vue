@@ -1,6 +1,6 @@
 <template>
-    <div class="calendar-month">
-        <div style="width: 290px; margin-right: auto; margin-left: auto;">
+    <div class="calendar-month" v-if="dataReady">
+
         <div class="calendar-month-header">
             <CalendarDateSelector
                 :current-date="today"
@@ -8,7 +8,7 @@
                 @dateSelected="selectDate"
             />
         </div>
-
+        <div style="width: 300px; margin-right: auto; margin-left: auto">
         <CalendarWeekdays/>
 
         <ul class="days-grid">
@@ -24,20 +24,23 @@
                 @select-day="selectDay"
             />
         </ul>
-        <calendar-legend></calendar-legend>
+
         </div>
-        <calendar-time
-            ref="calendar_time"
-            @select-time="selectTime"
-            :min-start-time="minStartTime"
-            :max-end-time="maxEndTime"
-        ></calendar-time>
-        <div class="calendar-btn__wrap">
-            <button class="calendar-btn" @click.prevent="selectDayAndTime">Выбрать</button>
-        </div>
-        <div class="calendar-time__descr">
-            Минимальное время брони — 2 часа
-        </div>
+        <section class="calendar-bottom">
+            <calendar-time
+                ref="calendar_time"
+                @select-time="selectTime"
+                :min-start-time="minStartTime"
+                :max-end-time="maxEndTime"
+            ></calendar-time>
+            <div class="calendar-btn__wrap">
+                <button class="calendar-btn" @click.prevent="selectDayAndTime">Выбрать</button>
+            </div>
+            <div class="calendar-time__descr">
+                Минимальное время брони — 2 часа
+            </div>
+        </section>
+
     </div>
 </template>
 <script>
@@ -65,9 +68,10 @@ export default {
 
     data() {
         return {
+            today:dayjs().format("YYYY-MM-DD"),
             selectedDate: dayjs(),
-            today: dayjs().format("YYYY-MM-DD"),
-            eventDay:"2022-10-11",
+            eventDay:"2021-12-22",
+            dataReady:false,
             reserveData: {
                 selectedDay:null,
                 selectedDayString:'',
@@ -81,13 +85,13 @@ export default {
                 sunday: '11:00'
             },
             event_dates:[],
-        };
+        }
     },
 
     computed: {
         maxEndTime() {
             let time;
-            if(this.reserveData.selectedDay === '2022-12-31') {
+            if(this.reserveData.selectedDay === '2023-12-31') {
                 time= '20:00'
             } else {
                 time= '24:00'
@@ -107,8 +111,9 @@ export default {
             }
             else if( weekday ===  0) {
                 time = this.minTimes.sunday;
-            } else {
-                time = this.minTimes.default;
+            }
+            else {
+               time = this.minTimes.default;
             }
             return time;
         },
@@ -203,8 +208,19 @@ export default {
     },
 
     methods: {
+        checkIsOffDay(date) {
+            let index = this.event_dates.findIndex(item => item.date === date);
+            if(index === -1) {
+                return true;
+            } else {
+                if(this.event_dates[index].day_off) {
+                    return false;
+                } else {
+                    return true;
+                }
+            }
+        },
         isWomanDay(date) {
-            console.log(date);
             let weekday = this.getWeekday(date);
             if(weekday === 1) {
                 if(date === '2023-01-02') {
@@ -216,7 +232,6 @@ export default {
             }
         },
         isEventDate(date) {
-
             let index = this.event_dates.findIndex(item => item.date === date);
             if(index === -1) {
                 return false;
@@ -227,18 +242,6 @@ export default {
         selectDayAndTime() {
             if(this.reserveData.selectedDay && this.reserveData.startTime && this.reserveData.endTime) {
                 this.$emit('select-day-and-time', this.reserveData);
-            }
-        },
-        checkIsOffDay(date) {
-            let index = this.event_dates.findIndex(item => item.date === date);
-            if(index === -1) {
-                return true;
-            } else {
-                if(this.event_dates[index].day_off) {
-                    return false;
-                } else {
-                    return true;
-                }
             }
         },
         async selectDay(date) {
@@ -267,11 +270,10 @@ export default {
         },
         getCurrentDate() {
             //this.$root.api_url
-            axios.get('/api/get-current-date')
+            axios.get(  '/api/get-current-date')
                 .then((response) => {
                     this.today = response.data;
                     this.selectDay(this.today);
-                    this.dataReady = true;
                 })
         },
         getStartTime() {
@@ -293,13 +295,13 @@ export default {
         },
         async getStartData() {
             await this.getEventDates();
+            await this.getCurrentDate();
             await this.getStartTime();
-            //await this.getCurrentDate();
             this.dataReady = true;
         }
     },
     async mounted() {
-        await this.getStartData();
+       await this.getStartData();
     }
 }
 </script>
@@ -309,13 +311,25 @@ export default {
     background-color: var(--grey-200);
     border: solid 1px var(--grey-300);
 }
-
+.calendar-bottom {
+    background-color: #FFFFFF;
+    padding: 28px 0;
+}
+.calendar-month-header {
+    margin-bottom: 20px;
+    padding: 30px 0 40px 0;
+    background-color: #F3EEE8;
+}
 .day-of-week {
-    color: var(--grey-800);
-    font-size: 18px;
-    background-color: #fff;
-    padding-bottom: 5px;
+    font-family: "Jost", sans-serif;
+    font-weight:400;
+    color:#C7A568;
+    font-size:17px;
+
+    padding-bottom: 10px;
     padding-top: 10px;
+    border-bottom: 1px solid #CAA769;
+    margin-bottom: 17px;
 }
 
 .day-of-week,
@@ -338,16 +352,21 @@ export default {
     grid-column-gap: var(--grid-gap);
     grid-row-gap: var(--grid-gap);
     border-top: solid 1px var(--grey-200);
+    margin-bottom: 42px;
 }
 .calendar-btn {
+    cursor: pointer;
     color: #fff;
-    background: #3097A1;
+    background: #C7A568;
     box-shadow: 0 0 0 transparent;
     border: 0 solid transparent;
     border-radius: 6px;
-    padding: 6px 30px;
+    padding: 14px 25px;
+    text-transform: uppercase;
     font-size: 16px;
+    font-weight: 500;
     text-shadow: 0 0 0 transparent;
+    font-family: "Jost", sans-serif;
     &__wrap {
         margin-top: 20px;
         text-align: center;

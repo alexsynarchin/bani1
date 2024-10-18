@@ -5,12 +5,12 @@
         </h4>
         <div style="font-weight: bold; color:red;">{{timeTitle}}</div>
         <section class="reserve-map reserve-map--second">
-            <img :src="'/assets/images/second-floor.jpg'">
+            <img :src="'/assets/images/second-floor.png'">
             <div v-for="(cabinet, index) in cabinets"
                  @click.prevent="handleSelectCabinet(cabinet, index)"
                  class="reserve-map__cabinet"
                  :class="{
-                     'reserve-map__cabinet--selected': cabinet.select,
+                     'reserve-map__cabinet--selected2': cabinet.select,
                  }"
                  :style="{
                 width : cabinet.width,
@@ -19,63 +19,44 @@
                 left:cabinet.posX + 'px',
                 top:cabinet.posY + 'px'
             }">
-                <!--<span :class="'reserve-map__cabinet-name ' + 'reserve-map__cabinet-name--' + cabinet.number">
-                    Кабинка {{cabinet.number}}
-                </span> -->
-                <img v-if="cabinet.reserved" :src="'/assets/images/places/cabin-' + cabinet.number  + '-res.svg' "
+
+                <img v-if="cabinet.reserved" :src=" '/assets/images/places/cabinet-' + cabinet.number  + '-res.png' "
                      :width="cabinet.width"
                      :height="cabinet.height">
-                <img v-else  :src="'/assets/images/places/cabin-' + cabinet.number  + '.svg' "
+                <img v-else-if="cabinet.select" :src=" '/assets/images/places/cabinet-' + cabinet.number  + '-sel.png' "
                      :width="cabinet.width"
                      :height="cabinet.height">
-              <!--  <svg
-                    v-if="cabinet.reserved"
-                    :width="cabinet.width"
-                    :height="cabinet.height"
-                    :style="{
-                        width:cabinet.width,
-                        height:cabinet.height,
-                        }"
-                    :viewBox="'0 0 ' +  cabinet.width + ' ' + cabinet.height">
-                    <use :xlink:href="'/assets/site/images/sprites.svg?ver=11#sprite-cabin-' + cabinet.number+ '-res'"></use>
-                </svg>
-                <svg
-                    v-else
-                    :width="cabinet.width"
-                    :height="cabinet.height"
-                    :style="{
-                        width:cabinet.width,
-                        height:cabinet.height,
-                        }"
-                    :viewBox="'0 0 ' +  cabinet.width + ' ' + cabinet.height">
-                    <use :xlink:href="'/assets/site/images/sprites.svg?ver=8#sprite-cabin-' + cabinet.number"></use>
-                </svg>
-                -->
+                <img v-else  :src="'/assets/images/places/cabinet-' + cabinet.number  + '.png' "
+                     :width="cabinet.width"
+                     :height="cabinet.height">
+
             </div>
             <div v-for="(place, index) in places"
+
                  @click.prevent="handleSelectPlace(place, index)"
-                 class="reserve-map__place-2"
+                 class="reserve-map__place"
+
                  :style="{left:place.posX + 'px',top:place.posY + 'px'}"
                  :class="{
-                     'reserve-map__place-2--selected': place.select,
+                     'reserve-map__place--selected2': place.select,
                 }"
             >
-                <span class="reserve-map__place-2-number" :class="{
-                    'reserve-map__place-2-number--left' : place.type === 'left',
-                    'reserve-map__place-2-number--right' : place.type === 'right',
-                    'reserve-map__place-2-number--top' : place.type === 'top',
-                    'reserve-map__place-2-number--down' : place.type === 'down',
+                <span class="reserve-map__place-number" :class="{
+                    'reserve-map__place-number--left' : place.type === 'left',
+                    'reserve-map__place-number--right' : place.type === 'right',
+                    'reserve-map__place-number--top' : place.type === 'top',
+                    'reserve-map__place-number--down' : place.type === 'down',
                 }">{{place.number}}</span>
-                <img v-if="place.reserved"  :src="'/assets/images/places/place-' + place.type  + '-res.svg' ">
-                <img v-else  :src="'/assets/images/places/place-' + place.type  + '.svg' ">
-                <!--
-                <svg viewBox="0 0 35 35" v-if="place.reserved">
-                    <use :xlink:href="'/assets/site/images/sprites.svg?ver=8#sprite-place-' + place.type + '-res'"></use>
-                </svg>
-                <svg viewBox="0 0 35 35" v-else>
-                    <use :xlink:href="'/assets/site/images/sprites.svg?ver=8#sprite-place-' + place.type + '-2'"></use>
-                </svg>
-                -->
+                <img
+                    style="width: 27px;height: 27px"
+                    v-if="place.reserved" :src=" '/assets/images/places/place-' + place.type  + '-res.png' ">
+                <img
+                    style="width: 27px;height: 27px"
+                    v-else-if="place.select" :src=" '/assets/images/places/place-' + place.type  + '-sel.png' ">
+                <img
+                    style="width: 27px;height: 27px"
+                    v-else  :src=" '/assets/images/places/place-' + place.type  + '.png' ">
+
             </div>
         </section>
     </div>
@@ -83,6 +64,10 @@
 <script>
 export default {
     props: {
+        timeTitle: {
+            type:String,
+            default: "",
+        },
         selectedPlacesArr:{
             type:Array,
             default: function (){
@@ -117,10 +102,6 @@ export default {
             type: Boolean,
             default: false
         },
-        timeTitle: {
-            type:String,
-            default: "",
-        }
     },
     data() {
         return {
@@ -130,7 +111,7 @@ export default {
     },
     methods: {
         getCabinets() {
-            axios.get(  '/api/cabinets/list/' + 2, {params:{startDate:this.startDate, endDate:this.endDate, date:this.date}})
+            axios.get( '/api/cabinets/list/' + 2, {params:{startDate:this.startDate, endDate:this.endDate, date:this.date}})
                 .then((response) => {
                     this.cabinets = response.data;
                     this.cabinets.forEach( (item, index)=> {
@@ -144,7 +125,7 @@ export default {
                 })
         },
         getPlaces() {
-            axios.get( '/api/places/list/' + 2, {params:{startDate:this.startDate, endDate:this.endDate, date:this.date}})
+            axios.get('/api/places/list/' + 2, {params:{startDate:this.startDate, endDate:this.endDate, date:this.date}})
                 .then((response) => {
                     this.places = response.data;
                     this.places.forEach( (item, index)=> {

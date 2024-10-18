@@ -4,7 +4,9 @@
             <h4 class="reserve-inf__title">
                 3 шаг
             </h4>
-
+            <p class="reserve-inf__descr">
+                Произведите оплату <br> выбранных вами мест
+            </p>
             <p class="reserve-inf__selected">
                 Выбрано:
             </p>
@@ -48,7 +50,6 @@
                 </li>
             </ul>
             <div class="reserve-inf__btn-wrap">
-
                 <button class="reserve-inf__btn" @click.prevent="orderReservation">
                     Забронировать
                 </button>
@@ -88,7 +89,6 @@
 </script>
 <style lang="scss">
 .reserve-inf {
-    min-width: 350px;
     padding: 30px;
     background: #006672;
     border-radius: 15px;
@@ -113,13 +113,14 @@
     &__btn {
         margin-bottom: 20px;
         color: #fff;
-        background: #dfb05c;
+        background: #C7A568;
         box-shadow: 0 0 0 transparent;
         border: 0 solid transparent;
         border-radius: 6px;
         padding: 15px 30px;
         text-shadow: 0 0 0 transparent;
         width: 100%;
+        font-family: "Jost", sans-serif;
         font-size: 16px;
         &__wrap {
             margin-top: 20px;

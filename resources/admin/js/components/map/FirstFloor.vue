@@ -1,9 +1,9 @@
 <template>
     <div class="map-floor map-floor--second">
         <h4 class="map-floor__title">
-
+            1 ЭТАЖ
         </h4>
-        <div style="font-weight: bold; color:red;">{{timeTitle}}</div>
+        <div style="font-weight: bold; color:red; text-align: center">{{timeTitle}}</div>
         <section class="reserve-map reserve-map--second">
             <img :src="'/assets/images/first-floor.png'">
             <div v-for="(cabinet, index) in cabinets"
@@ -19,42 +19,17 @@
                 left:cabinet.posX + 'px',
                 top:cabinet.posY + 'px'
             }">
-                <!--
-                <span :class="'reserve-map__cabinet-name ' + 'reserve-map__cabinet-name--' + cabinet.number">
-                    Кабинка {{cabinet.number}}
-                </span>-->
-                <img v-if="cabinet.reserved" :src="'/assets/images/places/cabinet-' + cabinet.number  + '-res.png' "
+
+                <img v-if="cabinet.reserved" :src=" '/assets/images/places/cabinet-' + cabinet.number  + '-res.png' "
                      :width="cabinet.width"
                      :height="cabinet.height">
-                <img v-else-if="cabinet.select" :src="'/assets/images/places/cabinet-' + cabinet.number  + '-sel.png' "
+                <img v-else-if="cabinet.select" :src=" '/assets/images/places/cabinet-' + cabinet.number  + '-sel.png' "
                      :width="cabinet.width"
                      :height="cabinet.height">
-                <img v-else  :src="'/assets/images/places/cabinet-' + cabinet.number  + '.png' "
+                <img v-else  :src=" + '/assets/images/places/cabinet-' + cabinet.number  + '.png' "
                      :width="cabinet.width"
                      :height="cabinet.height">
 
-                <!--  <svg
-                     v-if="cabinet.reserved"
-                     :width="cabinet.width"
-                     :height="cabinet.height"
-                     :style="{
-                         width:cabinet.width,
-                         height:cabinet.height,
-                         }"
-                     :viewBox="'0 0 ' +  cabinet.width + ' ' + cabinet.height">
-                     <use :xlink:href="'/assets/site/images/sprites.svg?ver=11#sprite-cabin-' + cabinet.number+ '-res'"></use>
-                 </svg>
-                 <svg
-                     v-else
-                     :width="cabinet.width"
-                     :height="cabinet.height"
-                     :style="{
-                         width:cabinet.width,
-                         height:cabinet.height,
-                         }"
-                     :viewBox="'0 0 ' +  cabinet.width + ' ' + cabinet.height">
-                     <use :xlink:href="'/assets/site/images/sprites.svg?ver=8#sprite-cabin-' + cabinet.number"></use>
-                 </svg> -->
             </div>
             <div v-for="(place, index) in places"
                  @click.prevent="handleSelectPlace(place, index)"
@@ -70,18 +45,9 @@
                     'reserve-map__place-number--top' : place.type === 'top',
                     'reserve-map__place-number--down' : place.type === 'down',
                 }">{{place.number}}</span>
-                <img v-if="place.reserved" :src="'/assets/images/places/place-' + place.type  + '-res.png' ">
-                <img v-else-if="place.select" :src="'/assets/images/places/place-' + place.type  + '-sel.png' ">
+                <img v-if="place.reserved" :src=" '/assets/images/places/place-' + place.type  + '-res.png' ">
+                <img v-else-if="place.select" :src=" '/assets/images/places/place-' + place.type  + '-sel.png' ">
                 <img  v-else  :src="'/assets/images/places/place-' + place.type  + '.png' ">
-
-                <!---
-                <svg viewBox="0 0 44 44" v-if="place.reserved">
-                    <use :xlink:href="'/assets/site/images/sprites.svg?ver=29#sprite-place-' + place.type + '-res'"></use>
-                </svg>
-                <svg viewBox="0 0 44 44" v-else>
-                    <use :xlink:href="'/assets/site/images/sprites.svg?ver=28#sprite-place-' + place.type"></use>
-                </svg>
-                -->
             </div>
         </section>
     </div>
@@ -93,6 +59,7 @@ export default {
             type: String,
             default: "",
         },
+
         selectedPlacesArr: {
             type: Array,
             default: function () {
@@ -136,7 +103,8 @@ export default {
     },
     methods: {
         getCabinets() {
-            axios.get('/api/cabinets/list/' + 2, {
+            axios.get( '/api/cabinets/list/' + 1
+                , {
                 params: {
                     startDate: this.startDate,
                     endDate: this.endDate,
@@ -196,7 +164,7 @@ export default {
                 let price = 0;
                 if (this.duration > 2) {
                     let discount_time = this.duration - 2;
-                    let discount_price = data['price'] - 100;
+                    let discount_price = data['price'] - 150;
                     price = data['price'] * 2;
                     price = price + (discount_price * discount_time)
                 } else {
@@ -227,7 +195,7 @@ export default {
                     let selectedArrIndex = this.selectedCabinsArr.findIndex(function (item) {
                         return item === index
                     });
-                    this.this.selectedCabinsArr.splice(selectedArrIndex, 1);
+                    this.selectedCabinsArr.splice(selectedArrIndex, 1);
                 }
                 let data = {
                     id: cabinet.id,

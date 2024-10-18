@@ -20,6 +20,7 @@ export default {
 
 <style lang="scss" scoped>
 .day-of-week {
+
     list-style-type: none;
     padding-left: 0;
     margin-left: 0;
@@ -29,7 +30,7 @@ export default {
 }
 
 .day-of-week > * {
-    text-align: right;
-    padding-right: 5px;
+    text-align: center;
+
 }
 </style>
