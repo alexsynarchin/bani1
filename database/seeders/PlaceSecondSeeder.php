@@ -424,6 +424,7 @@ class PlaceSecondSeeder extends Seeder
 
         ];
         foreach ($places as $place) {
+            $place['price'] = 450;
             $place = Place::create($place);
         }
     }
