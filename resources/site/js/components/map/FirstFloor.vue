@@ -1,7 +1,7 @@
 <template>
     <div class="map-floor map-floor--second">
         <h4 class="map-floor__title">
-
+            1 ЭТАЖ
         </h4>
         <div style="font-weight: bold; color:red; text-align: center">{{timeTitle}}</div>
         <section class="reserve-map reserve-map--second">
