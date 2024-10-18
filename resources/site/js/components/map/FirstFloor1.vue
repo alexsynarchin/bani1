@@ -17,7 +17,7 @@
                 left:cabinet.posX + 'px',
                 top:cabinet.posY + 'px'
             }">
-
+            </div>
         </section>
     </div>
 </template>

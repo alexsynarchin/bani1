@@ -19,10 +19,7 @@
                 left:cabinet.posX + 'px',
                 top:cabinet.posY + 'px'
             }">
-                <!--
-                <span :class="'reserve-map__cabinet-name ' + 'reserve-map__cabinet-name--' + cabinet.number">
-                    Кабинка {{cabinet.number}}
-                </span>-->
+
                 <img v-if="cabinet.reserved" :src="$root.api_url + '/assets/images/places/cabinet-' + cabinet.number  + '-res.png' "
                      :width="cabinet.width"
                      :height="cabinet.height">
@@ -33,28 +30,6 @@
                      :width="cabinet.width"
                      :height="cabinet.height">
 
-                <!--  <svg
-                     v-if="cabinet.reserved"
-                     :width="cabinet.width"
-                     :height="cabinet.height"
-                     :style="{
-                         width:cabinet.width,
-                         height:cabinet.height,
-                         }"
-                     :viewBox="'0 0 ' +  cabinet.width + ' ' + cabinet.height">
-                     <use :xlink:href="'/assets/site/images/sprites.svg?ver=11#sprite-cabin-' + cabinet.number+ '-res'"></use>
-                 </svg>
-                 <svg
-                     v-else
-                     :width="cabinet.width"
-                     :height="cabinet.height"
-                     :style="{
-                         width:cabinet.width,
-                         height:cabinet.height,
-                         }"
-                     :viewBox="'0 0 ' +  cabinet.width + ' ' + cabinet.height">
-                     <use :xlink:href="'/assets/site/images/sprites.svg?ver=8#sprite-cabin-' + cabinet.number"></use>
-                 </svg> -->
             </div>
             <div v-for="(place, index) in places"
                  @click.prevent="handleSelectPlace(place, index)"
@@ -73,15 +48,6 @@
                 <img v-if="place.reserved" :src="$root.api_url + '/assets/images/places/place-' + place.type  + '-res.png' ">
                 <img v-else-if="place.select" :src="$root.api_url + '/assets/images/places/place-' + place.type  + '-sel.png' ">
                 <img  v-else  :src="$root.api_url + '/assets/images/places/place-' + place.type  + '.png' ">
-
-                <!---
-                <svg viewBox="0 0 44 44" v-if="place.reserved">
-                    <use :xlink:href="'/assets/site/images/sprites.svg?ver=29#sprite-place-' + place.type + '-res'"></use>
-                </svg>
-                <svg viewBox="0 0 44 44" v-else>
-                    <use :xlink:href="'/assets/site/images/sprites.svg?ver=28#sprite-place-' + place.type"></use>
-                </svg>
-                -->
             </div>
         </section>
     </div>
@@ -229,7 +195,7 @@ export default {
                     let selectedArrIndex = this.selectedCabinsArr.findIndex(function (item) {
                         return item === index
                     });
-                    this.this.selectedCabinsArr.splice(selectedArrIndex, 1);
+                    this.selectedCabinsArr.splice(selectedArrIndex, 1);
                 }
                 let data = {
                     id: cabinet.id,

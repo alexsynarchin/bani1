@@ -5,7 +5,7 @@
         </h4>
         <div style="font-weight: bold; color:red;">{{timeTitle}}</div>
         <section class="reserve-map reserve-map--second">
-            <img :src="$root.api_url + '/assets/images/second-floor.jpg'">
+            <img :src="$root.api_url + '/assets/images/second-floor.png'">
             <div v-for="(cabinet, index) in cabinets"
                  @click.prevent="handleSelectCabinet(cabinet, index)"
                  class="reserve-map__cabinet"
@@ -19,10 +19,7 @@
                 left:cabinet.posX + 'px',
                 top:cabinet.posY + 'px'
             }">
-                <!--
-                <span :class="'reserve-map__cabinet-name ' + 'reserve-map__cabinet-name--' + cabinet.number">
-                    Кабинка {{cabinet.number}}
-                </span>-->
+
                 <img v-if="cabinet.reserved" :src="'https://admin.baniufa.ru/assets/images/places/cabin-' + cabinet.number  + '-res.svg' "
                      :width="cabinet.width"
                      :height="cabinet.height">
@@ -30,54 +27,33 @@
                      :width="cabinet.width"
                      :height="cabinet.height">
 
-               <!--  <svg
-                    v-if="cabinet.reserved"
-                    :width="cabinet.width"
-                    :height="cabinet.height"
-                    :style="{
-                        width:cabinet.width,
-                        height:cabinet.height,
-                        }"
-                    :viewBox="'0 0 ' +  cabinet.width + ' ' + cabinet.height">
-                    <use :xlink:href="'/assets/site/images/sprites.svg?ver=11#sprite-cabin-' + cabinet.number+ '-res'"></use>
-                </svg>
-                <svg
-                    v-else
-                    :width="cabinet.width"
-                    :height="cabinet.height"
-                    :style="{
-                        width:cabinet.width,
-                        height:cabinet.height,
-                        }"
-                    :viewBox="'0 0 ' +  cabinet.width + ' ' + cabinet.height">
-                    <use :xlink:href="'/assets/site/images/sprites.svg?ver=8#sprite-cabin-' + cabinet.number"></use>
-                </svg> -->
             </div>
             <div v-for="(place, index) in places"
-                 v-if="place.number !== 52"
+
                  @click.prevent="handleSelectPlace(place, index)"
-                 class="reserve-map__place-2"
+                 class="reserve-map__place"
+
                  :style="{left:place.posX + 'px',top:place.posY + 'px'}"
                  :class="{
-                     'reserve-map__place-2--selected': place.select,
+                     'reserve-map__place--selected2': place.select,
                 }"
             >
-                <span class="reserve-map__place-2-number" :class="{
-                    'reserve-map__place-2-number--left' : place.type === 'left',
-                    'reserve-map__place-2-number--right' : place.type === 'right',
-                    'reserve-map__place-2-number--top' : place.type === 'top',
-                    'reserve-map__place-2-number--down' : place.type === 'down',
+                <span class="reserve-map__place-number" :class="{
+                    'reserve-map__place-number--left' : place.type === 'left',
+                    'reserve-map__place-number--right' : place.type === 'right',
+                    'reserve-map__place-number--top' : place.type === 'top',
+                    'reserve-map__place-number--down' : place.type === 'down',
                 }">{{place.number}}</span>
-                <img v-if="place.reserved"  :src="'https://admin.baniufa.ru/assets/images/places/place-' + place.type  + '-res.svg' ">
-                <img v-else  :src="'https://admin.baniufa.ru/assets/images/places/place-' + place.type  + '.svg' ">
+                <img
+                    style="width: 27px;height: 27px"
+                    v-if="place.reserved" :src="$root.api_url + '/assets/images/places/place-' + place.type  + '-res.png' ">
+                <img
+                    style="width: 27px;height: 27px"
+                    v-else-if="place.select" :src="$root.api_url + '/assets/images/places/place-' + place.type  + '-sel.png' ">
+                <img
+                    style="width: 27px;height: 27px"
+                    v-else  :src="$root.api_url + '/assets/images/places/place-' + place.type  + '.png' ">
 
-                <!--
-                <svg viewBox="0 0 35 35" v-if="place.reserved">
-                    <use :xlink:href="'/assets/site/images/sprites.svg?ver=8#sprite-place-' + place.type + '-res'"></use>
-                </svg>
-                <svg viewBox="0 0 35 35" v-else>
-                    <use :xlink:href="'/assets/site/images/sprites.svg?ver=8#sprite-place-' + place.type + '-2'"></use>
-                </svg>-->
             </div>
         </section>
     </div>
