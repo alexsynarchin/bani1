@@ -2,7 +2,7 @@
     <div class="booking__wrap">
         <section class="booking">
             <figure class="booking__logo">
-                <img :src="$root.api_url + '/assets/images/logo.svg'">
+                <img :src="'/assets/images/logo.svg'">
             </figure>
             <h3 class="booking__title">Онлайн-бронирование</h3>
 
