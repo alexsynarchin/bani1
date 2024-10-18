@@ -26,7 +26,7 @@
                 <img v-else-if="cabinet.select" :src=" '/assets/images/places/cabinet-' + cabinet.number  + '-sel.png' "
                      :width="cabinet.width"
                      :height="cabinet.height">
-                <img v-else  :src=" + '/assets/images/places/cabinet-' + cabinet.number  + '.png' "
+                <img v-else  :src="  '/assets/images/places/cabinet-' + cabinet.number  + '.png' "
                      :width="cabinet.width"
                      :height="cabinet.height">
 
