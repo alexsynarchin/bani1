@@ -10,7 +10,7 @@
                  @click.prevent="handleSelectCabinet(cabinet, index)"
                  class="reserve-map__cabinet"
                  :class="{
-                     'reserve-map__cabinet--selected': cabinet.select,
+                     'reserve-map__cabinet--selected2': cabinet.select,
                  }"
                  :style="{
                 width : cabinet.width,
@@ -20,10 +20,13 @@
                 top:cabinet.posY + 'px'
             }">
 
-                <img v-if="cabinet.reserved" :src="'https://admin.baniufa.ru/assets/images/places/cabin-' + cabinet.number  + '-res.svg' "
+                <img v-if="cabinet.reserved" :src="$root.api_url + '/assets/images/places/cabinet-' + cabinet.number  + '-res.png' "
                      :width="cabinet.width"
                      :height="cabinet.height">
-                <img v-else  :src="'https://admin.baniufa.ru/assets/images/places/cabin-' + cabinet.number  + '.svg' "
+                <img v-else-if="cabinet.select" :src="$root.api_url + '/assets/images/places/cabinet-' + cabinet.number  + '-sel.png' "
+                     :width="cabinet.width"
+                     :height="cabinet.height">
+                <img v-else  :src="$root.api_url + '/assets/images/places/cabinet-' + cabinet.number  + '.png' "
                      :width="cabinet.width"
                      :height="cabinet.height">
 
