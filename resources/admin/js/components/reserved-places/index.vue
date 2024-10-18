@@ -412,7 +412,7 @@ require('dayjs/locale/ru');
 .places-dashboard {
     margin-bottom: 20px;
     padding: 40px;
-    background-color: #007583;
+    background-color: #caa768;
     border-radius: 10px;
     color: #fff;
     &__wrap {
