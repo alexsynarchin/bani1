@@ -107,9 +107,9 @@ export default {
 
         }
         &--woman {
-            //background-color: pink;
-            //border-color:  pink;
-            //color: #fff;
+            background-color: pink;
+            border-color:  pink;
+            color: #fff;
         }
         &--selected {
             background-color: #CAA769;

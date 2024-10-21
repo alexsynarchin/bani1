@@ -442,6 +442,7 @@
         }
     }
     .booking-link {
+        text-align: left;
         font-size: 20px;
         background: none;
         padding: 0;

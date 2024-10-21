@@ -24,7 +24,7 @@
                 @select-day="selectDay"
             />
         </ul>
-
+            <calendar-legend></calendar-legend>
         </div>
         <section class="calendar-bottom">
             <calendar-time
@@ -222,7 +222,7 @@ export default {
         },
         isWomanDay(date) {
             let weekday = this.getWeekday(date);
-            if(weekday === 1) {
+            if(weekday === 3) {
                 if(date === '2023-01-02') {
                     return false;
                 }
