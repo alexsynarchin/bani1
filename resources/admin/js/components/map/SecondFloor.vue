@@ -5,7 +5,7 @@
         </h4>
         <div style="font-weight: bold; color:red;">{{timeTitle}}</div>
         <section class="reserve-map reserve-map--second">
-            <img :src="'/assets/images/second-floor.png'">
+            <img :src="'/assets/images/second-floor-1.png'">
             <div v-for="(cabinet, index) in cabinets"
                  @click.prevent="handleSelectCabinet(cabinet, index)"
                  class="reserve-map__cabinet"
@@ -48,13 +48,13 @@
                     'reserve-map__place-number--down' : place.type === 'down',
                 }">{{place.number}}</span>
                 <img
-                    style="width: 27px;height: 27px"
+                    style="width: 28px;height: 28px"
                     v-if="place.reserved" :src=" '/assets/images/places/place-' + place.type  + '-res.png' ">
                 <img
-                    style="width: 27px;height: 27px"
+                    style="width: 28px;height: 28px"
                     v-else-if="place.select" :src=" '/assets/images/places/place-' + place.type  + '-sel.png' ">
                 <img
-                    style="width: 27px;height: 27px"
+                    style="width: 28px;height: 28px"
                     v-else  :src=" '/assets/images/places/place-' + place.type  + '.png' ">
 
             </div>

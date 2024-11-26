@@ -24,7 +24,9 @@
                 @select-day="selectDay"
             />
         </ul>
-
+            <div style="font-weight: bold">
+                Внимание!<br> В понедельник и среду 1-ый этаж - Женский день.
+            </div>
         </div>
         <section class="calendar-bottom">
             <calendar-time

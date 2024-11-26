@@ -22,7 +22,7 @@
         :end-date="endDate"
         @select-item="selectReservationItem"
     ></first-floor>
-    <!--
+    
     <second-floor
         :date="date"
         :time-title="reserveData.selectedDayString +  ' с ' + reserveData.startTime + ' до '  + reserveData.endTime"
@@ -33,7 +33,7 @@
         :start-date="startDate"
         :end-date="endDate"
         @select-item="selectReservationItem"
-    ></second-floor> -->
+    ></second-floor>
     <reserved-places
         ref="reserved_places">
     </reserved-places>

@@ -24,7 +24,10 @@
                 @select-day="selectDay"
             />
         </ul>
-            <calendar-legend></calendar-legend>
+
+            <div style="font-weight: bold">
+                Внимание!<br> В понедельник и среду 1-ый этаж - Женский день.
+            </div>
         </div>
         <section class="calendar-bottom">
             <calendar-time
@@ -222,14 +225,7 @@ export default {
         },
         isWomanDay(date) {
             let weekday = this.getWeekday(date);
-            if(weekday === 3) {
-                if(date === '2023-01-02') {
-                    return false;
-                }
-                return true;
-            } else {
-                return false;
-            }
+            return false;
         },
         isEventDate(date) {
             let index = this.event_dates.findIndex(item => item.date === date);
