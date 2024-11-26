@@ -216,22 +216,22 @@ import ReservedPlaces from "../reserved-places/index.vue";
             font-weight: bold;
             font-family: "Forum", serif;
             &--left {
-                left: 4px;
+                left: 5px;
                 top:50%;
                 transform: translateY(-50%);
             }
             &--right {
-                right: 4px;
+                right: 5px;
                 top:50%;
                 transform: translateY(-50%);
             }
             &--top {
-                top:6px;
+                top:5px;
                 left: 50%;
                 transform: translateX(-50%);
             }
             &--down {
-                bottom:6px;
+                bottom:5px;
                 left: 50%;
                 transform: translateX(-50%);
             }
@@ -268,22 +268,22 @@ import ReservedPlaces from "../reserved-places/index.vue";
             font-weight: bold;
             font-family: "Forum", serif;
             &--left {
-                left: 4px;
+                left: 5px;
                 top:50%;
                 transform: translateY(-50%);
             }
             &--right {
-                right: 4px;
+                right: 5px;
                 top:50%;
                 transform: translateY(-50%);
             }
             &--top {
-                top:6px;
+                top:5px;
                 left: 50%;
                 transform: translateX(-50%);
             }
             &--down {
-                bottom:6px;
+                bottom:5px;
                 left: 50%;
                 transform: translateX(-50%);
             }
@@ -403,12 +403,12 @@ import ReservedPlaces from "../reserved-places/index.vue";
                 transform: translateY(-50%);
             }
             &--right {
-                right: 4px;
+                right: 5px;
                 top:50%;
                 transform: translateY(-50%);
             }
             &--top {
-                top:4px;
+                top:5px;
                 left: 50%;
                 transform: translateX(-50%);
             }
@@ -448,12 +448,12 @@ import ReservedPlaces from "../reserved-places/index.vue";
             font-weight: bold;
             font-family: "Forum", serif;
             &--left {
-                left: 4px;
+                left: 5px;
                 top:50%;
                 transform: translateY(-50%);
             }
             &--right {
-                right: 4px;
+                right: 5px;
                 top:50%;
                 transform: translateY(-50%);
             }
