@@ -214,6 +214,7 @@ import ReservedPlaces from "../reserved-places/index.vue";
             font-size: 13px;
             line-height: 13px;
             font-weight: bold;
+            font-family: "Forum", serif;
             &--left {
                 left: 4px;
                 top:50%;
@@ -265,6 +266,7 @@ import ReservedPlaces from "../reserved-places/index.vue";
             font-size: 12px;
             line-height: 12px;
             font-weight: bold;
+            font-family: "Forum", serif;
             &--left {
                 left: 4px;
                 top:50%;
@@ -394,6 +396,7 @@ import ReservedPlaces from "../reserved-places/index.vue";
             font-size: 13px;
             line-height: 13px;
             font-weight: bold;
+            font-family: "Forum", serif;
             &--left {
                 left: 4px;
                 top:50%;
@@ -443,6 +446,7 @@ import ReservedPlaces from "../reserved-places/index.vue";
             font-size: 12px;
             line-height: 12px;
             font-weight: bold;
+            font-family: "Forum", serif;
             &--left {
                 left: 4px;
                 top:50%;
