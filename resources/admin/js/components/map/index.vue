@@ -213,12 +213,12 @@ import ReservedPlaces from "../reserved-places/index.vue";
             line-height: 13px;
             font-weight: bold;
             &--left {
-                left: 6px;
+                left: 4px;
                 top:50%;
                 transform: translateY(-50%);
             }
             &--right {
-                right: 6px;
+                right: 4px;
                 top:50%;
                 transform: translateY(-50%);
             }
@@ -264,12 +264,12 @@ import ReservedPlaces from "../reserved-places/index.vue";
             line-height: 12px;
             font-weight: bold;
             &--left {
-                left: 6px;
+                left: 4px;
                 top:50%;
                 transform: translateY(-50%);
             }
             &--right {
-                right: 6px;
+                right: 4px;
                 top:50%;
                 transform: translateY(-50%);
             }
@@ -393,12 +393,12 @@ import ReservedPlaces from "../reserved-places/index.vue";
             line-height: 13px;
             font-weight: bold;
             &--left {
-                left: 6px;
+                left: 4px;
                 top:50%;
                 transform: translateY(-50%);
             }
             &--right {
-                right: 6px;
+                right: 4px;
                 top:50%;
                 transform: translateY(-50%);
             }
@@ -442,12 +442,12 @@ import ReservedPlaces from "../reserved-places/index.vue";
             line-height: 12px;
             font-weight: bold;
             &--left {
-                left: 6px;
+                left: 4px;
                 top:50%;
                 transform: translateY(-50%);
             }
             &--right {
-                right: 6px;
+                right: 4px;
                 top:50%;
                 transform: translateY(-50%);
             }

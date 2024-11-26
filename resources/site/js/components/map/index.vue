@@ -22,7 +22,7 @@
         :end-date="endDate"
         @select-item="selectReservationItem"
     ></first-floor>
-    
+
     <second-floor
         :date="date"
         :time-title="reserveData.selectedDayString +  ' с ' + reserveData.startTime + ' до '  + reserveData.endTime"
@@ -215,12 +215,12 @@ import ReservedPlaces from "../reserved-places/index.vue";
             line-height: 13px;
             font-weight: bold;
             &--left {
-                left: 6px;
+                left: 4px;
                 top:50%;
                 transform: translateY(-50%);
             }
             &--right {
-                right: 6px;
+                right: 4px;
                 top:50%;
                 transform: translateY(-50%);
             }
@@ -266,12 +266,12 @@ import ReservedPlaces from "../reserved-places/index.vue";
             line-height: 12px;
             font-weight: bold;
             &--left {
-                left: 6px;
+                left: 4px;
                 top:50%;
                 transform: translateY(-50%);
             }
             &--right {
-                right: 6px;
+                right: 4px;
                 top:50%;
                 transform: translateY(-50%);
             }
@@ -395,17 +395,17 @@ import ReservedPlaces from "../reserved-places/index.vue";
             line-height: 13px;
             font-weight: bold;
             &--left {
-                left: 6px;
+                left: 4px;
                 top:50%;
                 transform: translateY(-50%);
             }
             &--right {
-                right: 6px;
+                right: 4px;
                 top:50%;
                 transform: translateY(-50%);
             }
             &--top {
-                top:6px;
+                top:4px;
                 left: 50%;
                 transform: translateX(-50%);
             }
@@ -444,12 +444,12 @@ import ReservedPlaces from "../reserved-places/index.vue";
             line-height: 12px;
             font-weight: bold;
             &--left {
-                left: 6px;
+                left: 4px;
                 top:50%;
                 transform: translateY(-50%);
             }
             &--right {
-                right: 6px;
+                right: 4px;
                 top:50%;
                 transform: translateY(-50%);
             }
