@@ -20,13 +20,13 @@
                 top:cabinet.posY + 'px'
             }">
 
-                <img v-if="cabinet.reserved" :src="$root.api_url + '/assets/images/places/cabinet-' + cabinet.number  + '-res.png' "
+                <img v-if="cabinet.reserved" :src="$root.api_url + '/assets/images/places/cabinet-' + cabinet.number  + '-res.png?ver=3' "
                      :width="cabinet.width"
                      :height="cabinet.height">
-                <img v-else-if="cabinet.select" :src="$root.api_url + '/assets/images/places/cabinet-' + cabinet.number  + '-sel.png' "
+                <img v-else-if="cabinet.select" :src="$root.api_url + '/assets/images/places/cabinet-' + cabinet.number  + '-sel.png?ver=3' "
                      :width="cabinet.width"
                      :height="cabinet.height">
-                <img v-else  :src="$root.api_url + '/assets/images/places/cabinet-' + cabinet.number  + '.png' "
+                <img v-else  :src="$root.api_url + '/assets/images/places/cabinet-' + cabinet.number  + '.png?ver=3' "
                      :width="cabinet.width"
                      :height="cabinet.height">
 
