@@ -5,7 +5,9 @@
                 <img :src="$root.api_url + '/assets/images/logo.svg'">
             </figure>
             <h3 class="booking__title">Онлайн-бронирование</h3>
-
+            <div style="font-weight: 600">
+                «Бронирование дат с 19.12 - 31.12 только по тел.»
+            </div>
             <section class="booking-step">
                 <div class="booking-step__num">
                     1
