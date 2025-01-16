@@ -1,5 +1,5 @@
 <template>
-    <div class="map-floor map-floor--second" style="display: none">
+    <div class="map-floor map-floor--second" >
         <h4 class="map-floor__title">
             2 ЭТАЖ
         </h4>
