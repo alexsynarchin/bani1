@@ -14,7 +14,7 @@ class BookingController extends Controller
         $today =  Carbon::now()->addHours(5);
         $dayOfWeek = $today->dayOfWeek;
         $date = $today;
-        $hours = 15;
+        $hours = 12;
         $time = (int) $today->format('H');
         if($dayOfWeek === 6 ) {
           $hours = 12;
