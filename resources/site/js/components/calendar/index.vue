@@ -25,7 +25,7 @@
             />
         </ul>
 
-            <div style="font-weight: bold; font-size: 20px">
+            <div style="font-weight: bold; font-size: 17px">
                 Понедельник женский день - 1 этаж<br>
                 Среда женский день- 2 этаж
             </div>
