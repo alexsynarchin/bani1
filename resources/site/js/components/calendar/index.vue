@@ -25,9 +25,9 @@
             />
         </ul>
 
-            <div style="font-weight: bold; font-size: 17px">
+            <div style="font-weight: bold; font-size: 17px; color:red;">
                 Понедельник женский день - 1 этаж<br>
-                Среда женский день- 2 этаж
+                Среда женский день - 2 этаж
             </div>
         </div>
         <section class="calendar-bottom">
